@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://makeitneon.ch/sitemap.xml
+
+# Disallow internal paths
+Disallow: /api/
+Disallow: /admin/

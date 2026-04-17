@@ -1,0 +1,463 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "calculator": "Konfigurator",
+    "shop": "Shop",
+    "rental": "Mieten",
+    "portfolio": "Portfolio",
+    "about": "Über uns",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "customOrder": "Individuelle Bestellung",
+    "orderNow": "Jetzt bestellen"
+  },
+  "hero": {
+    "title": "Individuelle LED Neonschilder",
+    "subtitle": "Handgefertigt in Zürich. Weltweit geliefert.",
+    "cta_primary": "Schild gestalten",
+    "cta_secondary": "Kollektion ansehen"
+  },
+  "footer": {
+    "services": "Dienste",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "contact": "Kontakt",
+    "customSigns": "Individuelle Neonschilder",
+    "readySigns": "Fertige Schilder",
+    "businessSigns": "Geschäftsschilder",
+    "weddingSigns": "Hochzeitsschilder",
+    "logoSigns": "Logo-Schilder",
+    "aboutUs": "Über uns",
+    "ourWork": "Unsere Arbeiten",
+    "blog": "Blog",
+    "careers": "Karriere",
+    "impressum": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "address": "Zürich, Schweiz",
+    "workingHours": "Mo-Fr 9:00-18:00",
+    "rights": "Alle Rechte vorbehalten.",
+    "tagline": "Handgefertigte LED Neonschilder aus Zürich"
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "getQuote": "Kostenloses Angebot",
+    "chf": "CHF",
+    "indoor": "Innenbereich",
+    "outdoor": "Außenbereich",
+    "freeDesign": "Kostenloses Design-Mockup",
+    "warranty": "2 Jahre Garantie",
+    "handcrafted": "Handgefertigt in Zürich",
+    "freeShipping": "Handgefertigt in Zürich"
+  },
+  "stats": {
+    "signsValue": "500+",
+    "signsLabel": "Schilder gefertigt",
+    "clientsValue": "98%",
+    "clientsLabel": "Kundenzufriedenheit",
+    "lifespanValue": "50.000h",
+    "lifespanLabel": "LED Lebensdauer",
+    "warrantyValue": "2 Jahre",
+    "warrantyLabel": "Volle Garantie"
+  },
+  "pages": {
+    "home": {
+      "title": "Make It Neon — Individuelle LED Neonschilder | Zürich, Schweiz",
+      "description": "Handgefertigte LED Neonschilder aus Zürich. Gestalten Sie Ihr individuelles Neonschild online mit unserem Konfigurator. Fertige Schilder, Geschäftsbeschilderung und Hochzeitsneon."
+    },
+    "calculator": {
+      "title": "Neonschild-Konfigurator — Gestalten & Preis berechnen | Make It Neon",
+      "description": "Gestalten Sie Ihr individuelles LED-Neonschild und erhalten Sie sofort einen Preis. Wählen Sie Text, Schrift, Farbe und Größe."
+    },
+    "shop": {
+      "title": "LED Neonschilder kaufen — Fertige Kollektion | Make It Neon",
+      "description": "Entdecken Sie unsere Kollektion fertiger LED-Neonschilder. Geschäftsschilder, Hochzeitsneon, motivierende Sprüche und Wohndeko."
+    },
+    "portfolio": {
+      "title": "Unsere Arbeiten — Neonschild-Portfolio | Make It Neon",
+      "description": "Sehen Sie unser Portfolio individueller LED-Neonschilder in Cafés, Restaurants, Wohnungen und bei Events in der Schweiz."
+    },
+    "about": {
+      "title": "Über Make It Neon — LED Neonschild-Hersteller in Zürich",
+      "description": "Erfahren Sie mehr über Make It Neon, Zürichs führenden Hersteller von LED-Neonschildern. Handgefertigte Qualität, 2 Jahre Garantie."
+    },
+    "faq": {
+      "title": "FAQ — Häufig gestellte Fragen | Make It Neon",
+      "description": "Finden Sie Antworten auf häufige Fragen zu individuellen LED-Neonschildern, Preisen, Versand, Installation und Garantie."
+    },
+    "contact": {
+      "title": "Kontakt — Make It Neon | Zürich, Schweiz",
+      "description": "Kontaktieren Sie Make It Neon. Anfragen für individuelle Neonschilder, Angebote oder Support. Mit Sitz in Zürich, Schweiz."
+    },
+    "blog": {
+      "title": "Blog — Neonschild-Ideen & Tipps | Make It Neon",
+      "description": "Entdecken Sie Neonschild-Ideen, Tipps und Inspiration für Ihr Geschäft, Zuhause oder Event."
+    },
+    "customOrder": {
+      "title": "Individuelle Bestellung — Design hochladen | Make It Neon",
+      "description": "Reichen Sie Ihr individuelles Neonschild-Design, Logo oder Ihre Idee ein. Kostenloses Design-Mockup und Angebot innerhalb von 24 Stunden."
+    }
+  },
+  "shop": {
+    "title": "Fertige LED Neonschilder",
+    "subtitle": "Durchsuchen Sie unsere Kollektion handgefertigter LED-Neonschilder für Business, Hochzeiten und Wohndeko.",
+    "search": "Schilder suchen...",
+    "allCategories": "Alle",
+    "business": "Business",
+    "wedding": "Hochzeit",
+    "motivation": "Motivation",
+    "homeDecor": "Wohndeko",
+    "sortPopular": "Beliebt",
+    "sortPriceAsc": "Preis: Niedrig → Hoch",
+    "sortPriceDesc": "Preis: Hoch → Niedrig",
+    "sortNew": "Neueste",
+    "signsCount": "Schilder",
+    "noResults": "Keine Schilder gefunden",
+    "noResultsHint": "Versuchen Sie einen anderen Suchbegriff oder Filter.",
+    "resetFilters": "Filter zurücksetzen",
+    "customCta": "Nicht gefunden, was Sie suchen?",
+    "customCtaText": "Gestalten Sie Ihr eigenes Neonschild mit unserem Konfigurator.",
+    "designOwn": "Eigenes Schild gestalten",
+    "from": "ab",
+    "view": "Ansehen"
+  },
+  "product": {
+    "backToShop": "Zurück zum Shop",
+    "color": "Farbe",
+    "size": "Größe",
+    "usage": "Verwendung",
+    "indoor": "Innenbereich",
+    "outdoor": "Außenbereich",
+    "indoorIncl": "Inklusive",
+    "outdoorExtra": "+40% (IP65)",
+    "quantity": "Anzahl",
+    "total": "Gesamt",
+    "inclOutdoor": "inkl. Outdoor-Schutz",
+    "addToCart": "In den Warenkorb",
+    "added": "Hinzugefügt!",
+    "includes": "Im Lieferumfang",
+    "specifications": "Spezifikationen",
+    "related": "Ähnliche Schilder",
+    "powerAdapter": "Netzteil",
+    "mountingKit": "Wandmontage-Set",
+    "warranty2y": "2 Jahre Garantie",
+    "dimmerRemote": "Dimmer & Fernbedienung",
+    "material": "Material",
+    "materialValue": "LED Neon Flex auf Acryl",
+    "wattage": "Leistung",
+    "lifespan": "Lebensdauer",
+    "warranty": "Garantie",
+    "delivery": "Lieferzeit",
+    "deliveryValue": "5-7 Werktage",
+    "reviews": "Bewertungen"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "item": "Artikel",
+    "items": "Artikel",
+    "empty": "Ihr Warenkorb ist leer",
+    "emptyHint": "Entdecken Sie unsere Kollektion handgefertigter LED-Neonschilder.",
+    "browseShop": "Shop durchsuchen",
+    "total": "Gesamt",
+    "freeShipping": "Handgefertigt in Zürich • 2 Jahre Garantie",
+    "requestOrder": "Bestellung anfragen",
+    "clearCart": "Warenkorb leeren",
+    "continueShopping": "Weiter einkaufen"
+  },
+  "customOrder": {
+    "pageTitle": "Individuelle Bestellung",
+    "pageSubtitle": "Senden Sie uns Ihr Logo, Design oder Ihre Idee — wir erstellen innerhalb von 24 Stunden ein kostenloses Mockup.",
+    "projectType": "Projekttyp",
+    "textSign": "Textschild",
+    "textSignDesc": "Benutzerdefinierter Text in Ihrer Wunschschrift und Farbe",
+    "logoSign": "Logo-Schild",
+    "logoSignDesc": "Ihr Markenlogo als Neonschild",
+    "customShape": "Individuelle Form",
+    "customShapeDesc": "Einzigartige Form, Artwork oder Illustration",
+    "description": "Projektbeschreibung",
+    "descriptionPlaceholder": "Beschreiben Sie Ihr Projekt: gewünschter Text, Stil, Montageort...",
+    "uploadFile": "Datei hochladen",
+    "uploadHint": "Datei hierher ziehen",
+    "uploadBrowse": "oder klicken zum Auswählen",
+    "sizeOptions": "Größe & Optionen",
+    "approximateSize": "Ungefähre Größe",
+    "colorPreference": "Farbwunsch",
+    "contactDetails": "Kontaktdaten",
+    "fullName": "Name",
+    "phone": "Telefon",
+    "company": "Firma",
+    "sendRequest": "Anfrage senden",
+    "sending": "Wird gesendet...",
+    "submitNote": "Kostenloses Design-Mockup • Antwort in 24h • Keine Zahlungspflicht",
+    "successTitle": "Anfrage erhalten!",
+    "successMessage": "Vielen Dank! Wir melden uns innerhalb von 24 Stunden mit einem kostenlosen Design-Mockup.",
+    "howItWorks": "So funktioniert's",
+    "step1Title": "Idee einreichen",
+    "step1Desc": "Füllen Sie das Formular mit Ihren Projektdetails aus und laden Sie Referenzdateien hoch.",
+    "step2Title": "Kostenloses Mockup",
+    "step2Desc": "Wir erstellen innerhalb von 24 Stunden ein professionelles Mockup — komplett kostenlos.",
+    "step3Title": "Bestätigen & Fertigen",
+    "step3Desc": "Nach Ihrer Freigabe fertigen unsere Handwerker Ihr Schild in unserer Zürcher Werkstatt.",
+    "whyUs": "Warum Make It Neon?",
+    "calcCta": "Nur ein Textschild?",
+    "calcCtaDesc": "Nutzen Sie unseren Konfigurator für sofortige Preise und Live-Vorschau.",
+    "tryCalc": "Zum Konfigurator"
+  },
+  "usp": {
+    "title": "Warum Make It Neon?",
+    "subtitle": "Wir verbinden traditionelles Handwerk mit moderner LED-Technologie für Premium-Schilder, die lange halten.",
+    "handcrafted": "Handgefertigt in Zürich",
+    "handcraftedDesc": "Jedes Schild wird in unserer eigenen Zürcher Werkstatt mit strenger Qualitätskontrolle produziert.",
+    "shipping": "Weltweiter Versand",
+    "shippingDesc": "Kostenlose Lieferung in der Schweiz. Professioneller Montageservice in CH & Süddeutschland.",
+    "energy": "Energieeffiziente LED",
+    "energyDesc": "Verbraucht 80% weniger Energie als traditionelles Glasneon. Umweltfreundlich und kühl.",
+    "warranty": "2 Jahre Garantie",
+    "warrantyDesc": "Volle Abdeckung für Materialien, Netzteile und Handwerkskunst. Zufriedenheit garantiert."
+  },
+  "howItWorks": {
+    "title": "So funktioniert's",
+    "subtitle": "Von Ihrer Idee zum leuchtenden Meisterwerk — in fünf einfachen Schritten.",
+    "step1Title": "Design wählen",
+    "step1Desc": "Wählen Sie ein fertiges Schild aus unserem Shop oder erstellen Sie Ihr eigenes im Live-Konfigurator. Wählen Sie Text, Schrift, Farbe und Grösse — das Ergebnis sofort sehen.",
+    "step2Title": "Gratis-Mockup genehmigen",
+    "step2Desc": "Wir senden Ihnen innerhalb von 24 Stunden ein professionelles Foto-Mockup zur Genehmigung — komplett kostenlos und unverbindlich.",
+    "step3Title": "Handgefertigte Produktion",
+    "step3Desc": "Nach Ihrer Freigabe biegen und formen unsere Handwerker flexible LED-Neonröhren auf eine präzise geschnittene Acrylrückwand. Produktion dauert 5–7 Werktage.",
+    "step4Title": "Qualitätskontrolle & Foto",
+    "step4Desc": "Jedes Schild durchläuft eine gründliche Qualitätsprüfung und einen 24-Stunden-Dauertest. Wir fotografieren Ihr fertiges Schild und senden es Ihnen vor dem Versand.",
+    "step5Title": "Sichere Lieferung & einfache Montage",
+    "step5Desc": "Ihr Schild kommt in spezieller Schutzverpackung mit allem Zubehör: Netzteil, Montage-Set und einer Schritt-für-Schritt-Anleitung. Einfach einstecken und geniessen!",
+    "cta": "Jetzt gestalten"
+  },
+  "portfolio": {
+    "title": "Unsere Arbeiten",
+    "subtitle": "Unsere individuellen LED-Neonschilder in Aktion — in Cafés, Restaurants, Wohnungen und bei Events.",
+    "seeAll": "Alle Arbeiten ansehen",
+    "filterAll": "Alle",
+    "filterBusiness": "Business",
+    "filterEvents": "Events",
+    "filterHome": "Zuhause",
+    "filterWedding": "Hochzeit",
+    "pageTitle": "Unser Portfolio",
+    "pageSubtitle": "Entdecken Sie unsere Galerie individueller LED-Neonschilder in der Schweiz und darüber hinaus.",
+    "items": {
+      "cafe_zurich": { "title": "Café Vibes", "category": "Business", "location": "Zürich" },
+      "bar_lucerne": { "title": "Neon Bar", "category": "Business", "location": "Luzern" },
+      "wedding_bern": { "title": "Hochzeits-Glow", "category": "Hochzeit", "location": "Bern" },
+      "home_office": { "title": "Dream Big Studio", "category": "Zuhause", "location": "Basel" },
+      "salon_geneva": { "title": "Schönheitssalon", "category": "Business", "location": "Genf" },
+      "restaurant_zug": { "title": "Fine Dining", "category": "Business", "location": "Zug" },
+      "bedroom_modern": { "title": "Süsse Träume", "category": "Zuhause", "location": "Winterthur" },
+      "wedding_outdoor": { "title": "Gartenhochzeit", "category": "Hochzeit", "location": "Interlaken" },
+      "gym_motivation": { "title": "Fitness Studio", "category": "Business", "location": "Zürich" },
+      "office_startup": { "title": "Startup Büro", "category": "Business", "location": "Zürich" },
+      "hotel_lobby": { "title": "Hotel Welcome", "category": "Business", "location": "St. Moritz" },
+      "nursery_room": { "title": "Kinderzimmer", "category": "Zuhause", "location": "Lausanne" },
+      "club_entrance": { "title": "Nachtclub", "category": "Events", "location": "Zürich" },
+      "pop_up_store": { "title": "Pop-Up Store", "category": "Events", "location": "Bern" },
+      "rooftop_bar": { "title": "Rooftop Party", "category": "Events", "location": "Zürich" },
+      "bakery_sign": { "title": "Handwerksbäckerei", "category": "Business", "location": "Luzern" },
+      "living_room": { "title": "Gemütliches Wohnen", "category": "Zuhause", "location": "Bern" },
+      "wedding_arch": { "title": "Blumenbogen", "category": "Hochzeit", "location": "Montreux" },
+      "yoga_studio": { "title": "Yoga Studio", "category": "Business", "location": "Zürich" },
+      "event_stage": { "title": "Firmen-Event", "category": "Events", "location": "Genf" }
+    }
+  },
+  "testimonials": {
+    "title": "Was unsere Kunden sagen",
+    "subtitle": "Vertraut von über 120 zufriedenen Kunden in der Schweiz und weltweit.",
+    "averageRating": "4.9",
+    "reviewCount": "Basierend auf 120+ Bewertungen",
+    "reviews": [
+      {
+        "name": "Anna Müller",
+        "location": "Zürich",
+        "rating": 5,
+        "text": "Das 'Open'-Schild für mein Café ist absolut atemberaubend geworden. Die Qualität ist unglaublich und es erhellt die ganze Ladenfront. Sehr empfehlenswert!",
+        "category": "Café-Besitzerin"
+      },
+      {
+        "name": "Thomas & Sarah Weber",
+        "location": "Bern",
+        "rating": 5,
+        "text": "Unser 'Better Together'-Schild war das Highlight der Hochzeit. Die Gäste konnten nicht aufhören zu fotografieren. Jetzt steht es in unserem Wohnzimmer — pure Magie.",
+        "category": "Hochzeit"
+      },
+      {
+        "name": "Marco Bernasconi",
+        "location": "Luzern",
+        "rating": 5,
+        "text": "Ich habe ein individuelles Neon-Logo für meinen Barbershop erstellen lassen. Das Team war professionell, die Lieferung schnell und das Schild sieht noch besser aus als erwartet.",
+        "category": "Barbershop"
+      },
+      {
+        "name": "Lisa Chen",
+        "location": "Basel",
+        "rating": 5,
+        "text": "Ich habe 'Dream Big' für mein Homeoffice bestellt und lächle jedes Mal, wenn ich es sehe. Tolle Qualität, energieeffizient, perfekter Glow. Ich liebe es!",
+        "category": "Wohndeko"
+      },
+      {
+        "name": "Reto Zimmermann",
+        "location": "Zürich",
+        "rating": 4,
+        "text": "Ausgezeichnete Handwerkskunst. Unser Restaurant-Schild läuft täglich 12 Stunden seit einem Jahr ohne Probleme. Der Montageservice war ein schöner Bonus.",
+        "category": "Restaurant"
+      },
+      {
+        "name": "Julia Hofmann",
+        "location": "Winterthur",
+        "rating": 5,
+        "text": "Der ganze Prozess war so einfach — vom Online-Konfigurator bis zur Lieferung. Das Schild kam perfekt verpackt und sieht an unserer Wand absolut umwerfend aus.",
+        "category": "Wohndeko"
+      },
+      {
+        "name": "David Keller",
+        "location": "St. Gallen",
+        "rating": 5,
+        "text": "Wir waren von der Qualität begeistert. Das LED-Neon sieht genauso aus wie echtes Glasneon, aber ohne die Zerbrechlichkeit. Unsere Bar sieht jetzt unglaublich aus.",
+        "category": "Bar-Besitzer"
+      },
+      {
+        "name": "Sabrina Meier",
+        "location": "Lausanne",
+        "rating": 5,
+        "text": "Vom ersten Mockup bis zur Installation war das Make It Neon Team reaktiv und professionell. Unser Schönheitssalon hat noch nie besser ausgesehen!",
+        "category": "Schönheitssalon"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Alles, was Sie über unsere LED-Neonschilder wissen müssen.",
+    "search": "Fragen suchen...",
+    "noResults": "Keine Fragen gefunden. Versuchen Sie einen anderen Suchbegriff.",
+    "seeAll": "Alle FAQ ansehen",
+    "categoryOrder": "Bestellung & Bezahlung",
+    "categoryProduct": "Produkt",
+    "categoryShipping": "Versand & Installation",
+    "items": [
+      {
+        "question": "Wie bestelle ich ein individuelles Neonschild?",
+        "answer": "Ganz einfach! Nutzen Sie unseren Online-Konfigurator, um Text, Schriftart, Farbe und Größe zu wählen. Sie sehen eine Live-Vorschau und den Sofortpreis. Klicken Sie auf 'Jetzt bestellen' oder 'Kostenloses Angebot' für ein Mockup per E-Mail.",
+        "category": "order"
+      },
+      {
+        "question": "Wie lange dauert die Produktion?",
+        "answer": "Die Standardproduktionszeit beträgt 5-7 Werktage. Eilbestellungen (2-3 Tage) sind gegen Aufpreis möglich. Individuelle Logos und komplexe Designs können 7-10 Werktage dauern.",
+        "category": "order"
+      },
+      {
+        "question": "Welche Zahlungsmethoden akzeptieren Sie?",
+        "answer": "Wir akzeptieren alle gängigen Kreditkarten (Visa, Mastercard, Amex), PayPal, Banküberweisung (IBAN) und TWINT für Schweizer Kunden. Die Zahlung ist bei Auftragsbestätigung fällig.",
+        "category": "order"
+      },
+      {
+        "question": "Kann ich meine Bestellung stornieren oder ändern?",
+        "answer": "Sie können Ihre Bestellung innerhalb von 24 Stunden nach Aufgabe kostenlos stornieren oder ändern. Nach Produktionsbeginn sind Änderungen möglicherweise nicht mehr möglich. Bitte kontaktieren Sie uns so schnell wie möglich.",
+        "category": "order"
+      },
+      {
+        "question": "Was ist LED Neon Flex?",
+        "answer": "LED Neon Flex ist eine moderne Alternative zu traditionellem Glasneon. Es verwendet flexible LED-Streifen in einem Silikonrohr für den gleichen ikonischen Glow. Vorteile: bruchsicher, energieeffizient, kühl und viel leichter als Glasneon.",
+        "category": "product"
+      },
+      {
+        "question": "Wie lange halten LED-Neonschilder?",
+        "answer": "Unsere LED-Neonschilder sind für über 50.000 Betriebsstunden ausgelegt — das sind über 11 Jahre Dauerbetrieb (12 Stunden/Tag). Sie behalten ihre gleichmässige Helligkeit über die gesamte Lebensdauer.",
+        "category": "product"
+      },
+      {
+        "question": "Was ist der Unterschied zwischen Indoor- und Outdoor-Schildern?",
+        "answer": "Indoor-Schilder verwenden ein Standard-Netzteil und sind für trockene Umgebungen ausgelegt. Outdoor-Schilder haben IP65-Wasserschutz, UV-beständige Materialien und ein wetterfestes Netzteil. Der Preis für Outdoor-Versionen ist 40% höher.",
+        "category": "product"
+      },
+      {
+        "question": "Welche Farben sind verfügbar?",
+        "answer": "Wir bieten 12 Standardfarben: Weiss, Warmweiss, Eisblau, Blau, Rot, Rosa, Hot Pink, Lila, Grün, Gelb, Orange und Lemon. RGB (Farbwechsel) ist gegen Aufpreis erhältlich.",
+        "category": "product"
+      },
+      {
+        "question": "Können Sie ein Schild aus meinem Logo herstellen?",
+        "answer": "Absolut! Wir sind auf individuelle Logo-Neonschilder spezialisiert. Laden Sie einfach Ihr Logo auf unserer Seite für individuelle Bestellungen hoch, und wir erstellen innerhalb von 24 Stunden ein kostenloses Design-Mockup.",
+        "category": "product"
+      },
+      {
+        "question": "Versenden Sie international?",
+        "answer": "Ja! Wir bieten weltweiten Versand. Lieferung innerhalb der Schweiz ist kostenlos. Europäischer Versand dauert 3-5 Werktage, weltweite Sendungen 7-14 Werktage. Alle Schilder sind sicher für den Transport verpackt.",
+        "category": "shipping"
+      },
+      {
+        "question": "Wie wird mein Schild verpackt?",
+        "answer": "Jedes Schild wird in massgeschneidertem Schaumstoff in einem stabilen Karton verpackt. Wir fügen zusätzliche Polsterung um Kanten und Anschlüsse hinzu. Unsere Verpackung schützt Ihr Schild auch bei Fernversand.",
+        "category": "shipping"
+      },
+      {
+        "question": "Bieten Sie Montageservice an?",
+        "answer": "Ja, wir bieten professionelle Montage in Zürich und Umgebung (bis 100km). Für andere Standorte in der Schweiz und Süddeutschland können wir auf Anfrage professionelle Montage arrangieren. Jedes Schild enthält ein DIY-Montage-Set.",
+        "category": "shipping"
+      }
+    ]
+  },
+  "contact": {
+    "pageTitle": "Kontakt",
+    "pageSubtitle": "Haben Sie eine Frage, brauchen Sie ein Angebot oder möchten Sie einfach Hallo sagen? Wir freuen uns auf Ihre Nachricht.",
+    "infoTitle": "Kontaktieren Sie uns",
+    "address": "Zürich, Schweiz",
+    "addressFull": "Bahnhofstrasse 10, 8001 Zürich, Schweiz",
+    "phone": "+41 XX XXX XX XX",
+    "email": "info@makeitneon.ch",
+    "workingHours": "Mo — Fr, 9:00 — 18:00 MEZ",
+    "workingHoursNote": "Antwort am selben Tag während der Geschäftszeiten",
+    "formTitle": "Nachricht senden",
+    "formName": "Ihr Name",
+    "formNamePlaceholder": "Anna Müller",
+    "formEmail": "E-Mail-Adresse",
+    "formEmailPlaceholder": "anna@beispiel.ch",
+    "formSubject": "Betreff",
+    "formSubjectPlaceholder": "Anfrage individuelles Schild",
+    "formMessage": "Nachricht",
+    "formMessagePlaceholder": "Erzählen Sie uns von Ihrem Projekt, stellen Sie eine Frage oder sagen Sie einfach Hallo...",
+    "formSend": "Nachricht senden",
+    "formSending": "Wird gesendet...",
+    "formRequired": "Dieses Feld ist erforderlich",
+    "formInvalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "formMinLength": "Mindestens {{min}} Zeichen erforderlich",
+    "successTitle": "Nachricht gesendet!",
+    "successMessage": "Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb eines Werktages bei Ihnen.",
+    "sendAnother": "Weitere Nachricht senden",
+    "whatsappTitle": "Lieber chatten?",
+    "whatsappText": "Erhalten Sie sofortige Antworten über WhatsApp. Wir antworten während der Geschäftszeiten innerhalb von Minuten.",
+    "whatsappButton": "Auf WhatsApp chatten",
+    "mapTitle": "Besuchen Sie unsere Werkstatt",
+    "socialTitle": "Folgen Sie uns",
+    "socialInstagram": "Instagram",
+    "socialTikTok": "TikTok",
+    "socialFacebook": "Facebook"
+  },
+  "blog": {
+    "pageTitle": "Neonschild-Blog",
+    "pageSubtitle": "Ideen, Tipps und Inspiration für Ihr LED-Neonschild-Projekt. Expertenrat aus unserer Zürcher Werkstatt.",
+    "featuredBadge": "Empfohlen",
+    "readMore": "Artikel lesen",
+    "minRead": "Min. Lesezeit",
+    "backToBlog": "Zurück zum Blog",
+    "relatedArticles": "Verwandte Artikel",
+    "ctaTitle": "Bereit für Ihr eigenes Neonschild?",
+    "ctaText": "Gestalten Sie Ihr individuelles Schild mit unserem Konfigurator und erhalten Sie sofortige Preise.",
+    "ctaButton": "Konfigurator testen",
+    "publishedOn": "Veröffentlicht am",
+    "updatedOn": "Aktualisiert",
+    "shareArticle": "Diesen Artikel teilen",
+    "allArticles": "Alle Artikel"
+  },
+  "cookies": {
+    "title": "Wir verwenden Cookies 🍪",
+    "description": "Wir verwenden Cookies zur Analyse des Website-Traffics und zur Verbesserung Ihres Erlebnisses. Sie können Analyse-Cookies akzeptieren oder ablehnen. Essenzielle Cookies sind immer aktiv.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
+  }
+}
+

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make It Neon - CNC Engine</title>
+    <!-- Opentype.js for parsing TTF/OTF fonts in browser without canvas text measuring limitations -->
+    <script src="https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #f1f5f9;
+            --panel-bg: #ffffff;
+            --text-color: #0f172a;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --panel-bg: #1e293b;
+            --text-color: #f8fafc;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0; padding: 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 24px;
+        }
+        .visualizer {
+            background-color: transparent;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        .panel {
+            background-color: var(--panel-bg);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 14px; }
+        input[type="text"], input[type="number"], select {
+            width: 100%; padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background: transparent;
+            color: var(--text-color);
+        }
+        input[type="color"] {
+            width: 100%; height: 40px;
+            border: none; border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #FF2D78;
+            color: white;
+            border: none; border-radius: 6px;
+            font-weight: 600; cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background-color: #e00b55; }
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #FF2D78;
+            color: #FF2D78;
+            margin-top: 12px;
+        }
+        .stats {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 16px; border-radius: 8px;
+            margin-top: 24px; font-size: 14px;
+            color: #334155;
+        }
+        body.dark-mode .stats {
+            background: #0f172a; border-color: #334155; color: #cbd5e1;
+        }
+        .price { font-size: 24px; font-weight: bold; color: #FF2D78; margin-top: 8px;}
+        
+        /* Helper SVG to measure path mathematically in the DOM without rendering it */
+        .hidden-calc { position: absolute; width: 0; height: 0; visibility: hidden; pointer-events: none;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="visualizer" id="visualizer-container">
+        <svg id="preview-svg" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+            <!-- Neon Glow Filters -->
+            <defs>
+                <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur1" />
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur2" />
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur3" />
+                    <feMerge>
+                        <feMergeNode in="blur3" />
+                        <feMergeNode in="blur2" />
+                        <feMergeNode in="blur1" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+            <g id="preview-group"></g>
+        </svg>
+    </div>
+
+    <div class="panel">
+        <div class="form-group">
+            <label>Text</label>
+            <input type="text" id="input-text" value="Make It Neon">
+        </div>
+        <div class="form-group">
+            <label>Target Real-World Width (cm)</label>
+            <input type="number" id="input-width" value="100" min="20" max="300">
+        </div>
+        <div class="form-group">
+            <label>Neon Color</label>
+            <input type="color" id="input-color" value="#00D4FF">
+        </div>
+        
+        <button class="btn btn-outline" id="btn-theme">Toggle Day/Night</button>
+        
+        <div class="stats" id="calc-stats">
+            <div>Calculating...</div>
+        </div>
+
+        <button class="btn" id="btn-export">Download CNC SVG</button>
+    </div>
+</div>
+
+<svg class="hidden-calc" id="hidden-svg"></svg>
+
+<script>
+/**
+ * ARCHITECTURE & STATE
+ * We use a unidirectional data flow. 
+ * State variables -> Math/SF Engine -> DOM Update (UI preview) + Stats Generation.
+ * Export is generated mathematically on the fly from current state to keep DOM untainted.
+ */
+const state = {
+    text: "Make It Neon",
+    widthCm: 100,
+    color: "#00D4FF",
+    font: null,    // loaded opentype.js font object
+    engineResult: null // stores mathematical paths and lengths
+};
+
+// Pricing Constants
+const PRICE_PER_METER_NEON = 45; // CHF per meter of LED
+const PRICE_PER_METER_LASER = 12; // CHF per meter of Acrylic Milling
+const BASE_COST = 60; // Power supply, packaging
+const PADDING_CM = 3; // Pad around text for rectangular backing
+
+// We load a true TTF font to parse exact vectors.
+const FONT_URL = "https://raw.githubusercontent.com/opentypejs/opentype.js/master/fonts/Roboto-Black.ttf";
+
+opentype.load(FONT_URL, function(err, font) {
+    if (err) { alert('Could not load font: ' + err); return; }
+    state.font = font;
+    processEngine();
+});
+
+// Event Listeners
+document.getElementById('input-text').addEventListener('input', (e) => { state.text = e.target.value; processEngine(); });
+document.getElementById('input-width').addEventListener('input', (e) => { state.widthCm = Number(e.target.value); processEngine(); });
+document.getElementById('input-color').addEventListener('input', (e) => { state.color = e.target.value; processEngine(); });
+document.getElementById('btn-theme').addEventListener('click', () => document.body.classList.toggle('dark-mode'));
+document.getElementById('btn-export').addEventListener('click', exportCNC);
+
+/**
+ * CORE MATH FUNCTIONS: Scale Factor & Path Engine
+ * This engine generates pure, unstyled, mathematically scaled path data strings.
+ */
+function processEngine() {
+    if (!state.font || !state.text) {
+        document.getElementById('preview-group').innerHTML = '';
+        return;
+    }
+
+    // 1. Get raw font path at an arbitrary solid size (e.g., 100pt)
+    const rawPath = state.font.getPath(state.text, 0, 0, 100);
+    const bb = rawPath.getBoundingBox(); // {x1, y1, x2, y2}
+    const internalWidth = bb.x2 - bb.x1;
+    const internalHeight = bb.y2 - bb.y1;
+
+    // 2. Calculate Scale Factor (SF) to convert to millimeters (mm)
+    // CNC prefers millimeters over cm.
+    const targetWidthMm = state.widthCm * 10;
+    const SF = targetWidthMm / internalWidth;
+    
+    // 3. Calculate Real Height
+    const targetHeightMm = internalHeight * SF;
+
+    // 4. Generate Scaled Absolute Coordinates Path
+    // CNC machines hate CSS transforms. We mathematically move points and normalize to Origin (0,0).
+    let scaledD = '';
+    rawPath.commands.forEach(cmd => {
+        let x = (cmd.x - bb.x1) * SF;
+        let y = (cmd.y - bb.y1) * SF;
+        let x1 = cmd.x1 !== undefined ? (cmd.x1 - bb.x1) * SF : 0;
+        let y1 = cmd.y1 !== undefined ? (cmd.y1 - bb.y1) * SF : 0;
+        let x2 = cmd.x2 !== undefined ? (cmd.x2 - bb.x1) * SF : 0;
+        let y2 = cmd.y2 !== undefined ? (cmd.y2 - bb.y1) * SF : 0;
+
+        if (cmd.type === 'M') scaledD += `M${x.toFixed(2)} ${y.toFixed(2)} `;
+        else if (cmd.type === 'L') scaledD += `L${x.toFixed(2)} ${y.toFixed(2)} `;
+        else if (cmd.type === 'Q') scaledD += `Q${x1.toFixed(2)} ${y1.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)} `;
+        else if (cmd.type === 'C') scaledD += `C${x1.toFixed(2)} ${y1.toFixed(2)} ${x2.toFixed(2)} ${y2.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)} `;
+        else if (cmd.type === 'Z') scaledD += 'Z ';
+    });
+
+    // 5. Measure Path Length (Utilizing Browser's invisible SVG)
+    const hiddenSvg = document.getElementById('hidden-svg');
+    const measureNode = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    measureNode.setAttribute('d', scaledD);
+    hiddenSvg.appendChild(measureNode);
+    
+    const rawOutlineLengthMm = measureNode.getTotalLength();
+    hiddenSvg.innerHTML = ''; // Cleanup
+    
+    // Font is an outline, so the neon flex sits inside the groove (approx 50% length of the perimeter)
+    const millingLengthMeter = (rawOutlineLengthMm / 2) / 1000;
+
+    // 6. Calculate Acrylic Backing (Rectangular padding in mm)
+    const padMm = PADDING_CM * 10;
+    const cutWidthMm = targetWidthMm + (padMm * 2);
+    const cutHeightMm = targetHeightMm + (padMm * 2);
+    const cuttingLengthMeter = ((cutWidthMm + cutHeightMm) * 2) / 1000;
+
+    // 7. Pricing Formula
+    const millingCost = millingLengthMeter * PRICE_PER_METER_NEON;
+    const cuttingCost = cuttingLengthMeter * PRICE_PER_METER_LASER;
+    const totalPrice = BASE_COST + millingCost + cuttingCost;
+
+    // Save outputs to state for export & UI
+    state.engineResult = {
+        pathData: scaledD.trim(),
+        widthMm: targetWidthMm,
+        heightMm: targetHeightMm,
+        cutWidthMm: cutWidthMm,
+        cutHeightMm: cutHeightMm,
+        millingMeters: millingLengthMeter,
+        cuttingMeters: cuttingLengthMeter,
+        price: totalPrice,
+        paddingMm: padMm
+    };
+
+    updateUI();
+}
+
+/**
+ * UI VISUALIZER UPDATE
+ */
+function updateUI() {
+    const res = state.engineResult;
+    if (!res) return;
+
+    // Update SVG Preview
+    // We adjust viewBox dynamically so it always fits perfectly in the visualizer container
+    const svg = document.getElementById('preview-svg');
+    svg.setAttribute('viewBox', `-${res.paddingMm} -${res.paddingMm} ${res.cutWidthMm} ${res.cutHeightMm}`);
+
+    // Render the simulated neon outline with filter
+    const group = document.getElementById('preview-group');
+    group.innerHTML = `
+        <rect x="-${res.paddingMm}" y="-${res.paddingMm}" width="${res.cutWidthMm}" height="${res.cutHeightMm}" fill="rgba(255,255,255,0.05)" stroke="#cbd5e1" stroke-dasharray="10 10"/>
+        <path d="${res.pathData}" stroke="${state.color}" stroke-width="8" fill="none" class="neon-path" opacity="0.8" />
+        <path d="${res.pathData}" stroke="#fff" stroke-width="4" fill="none" filter="url(#neon-glow)" />
+    `;
+
+    // Update Stats
+    document.getElementById('calc-stats').innerHTML = `
+        <strong>Sign Dimensions:</strong> ${(res.widthMm/10).toFixed(1)}cm × ${(res.heightMm/10).toFixed(1)}cm<br>
+        <strong>Neon Flex Path (~):</strong> ${res.millingMeters.toFixed(2)} m<br>
+        <strong>Acrylic Perimeter:</strong> ${res.cuttingMeters.toFixed(2)} m<br>
+        <div class="price">${res.price.toFixed(2)} CHF</div>
+    `;
+}
+
+/**
+ * CORELDRAW / CNC EXPORT MODULE
+ * Clean standard SVG. No CSS. Strict mm units. Absolute Grouping.
+ */
+function exportCNC() {
+    const res = state.engineResult;
+    if (!res) return;
+
+    // Simple rectangular cutting perimeter offset by paddingMm
+    const cuttingPathM = `M-${res.paddingMm} -${res.paddingMm} L${res.widthMm + res.paddingMm} -${res.paddingMm} L${res.widthMm + res.paddingMm} ${res.heightMm + res.paddingMm} L-${res.paddingMm} ${res.heightMm + res.paddingMm} Z`;
+
+    const svgString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="${res.cutWidthMm}mm" height="${res.cutHeightMm}mm" viewBox="-${res.paddingMm} -${res.paddingMm} ${res.cutWidthMm} ${res.cutHeightMm}" xmlns="http://www.w3.org/2000/svg">
+  <g id="Milling_Groove" stroke="#0000ff" stroke-width="1" fill="none">
+    <path d="${res.pathData}" />
+  </g>
+  <g id="Cutting_Line" stroke="#ff0000" stroke-width="1" fill="none">
+    <path d="${cuttingPathM}" />
+  </g>
+</svg>`;
+
+    const blob = new Blob([svgString], { type: "image/svg+xml" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `MakeItNeon_Cut_${state.widthCm}cm.svg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

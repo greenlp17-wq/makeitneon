@@ -1,0 +1,463 @@
+{
+  "nav": {
+    "home": "Home",
+    "calculator": "Calculator",
+    "shop": "Shop",
+    "rental": "Rental",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "blog": "Blog",
+    "customOrder": "Custom Order",
+    "orderNow": "Order Now"
+  },
+  "hero": {
+    "title": "Custom LED Neon Signs",
+    "subtitle": "Handcrafted in Zurich. Delivered worldwide.",
+    "cta_primary": "Design Your Sign",
+    "cta_secondary": "Browse Collection"
+  },
+  "footer": {
+    "services": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "contact": "Contact",
+    "customSigns": "Custom Neon Signs",
+    "readySigns": "Ready-Made Signs",
+    "businessSigns": "Business Signs",
+    "weddingSigns": "Wedding Signs",
+    "logoSigns": "Logo Signs",
+    "aboutUs": "About Us",
+    "ourWork": "Our Work",
+    "blog": "Blog",
+    "careers": "Careers",
+    "impressum": "Impressum",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "address": "Zurich, Switzerland",
+    "workingHours": "Mon-Fri 9:00-18:00",
+    "rights": "All rights reserved.",
+    "tagline": "Handcrafted LED Neon Signs from Zurich"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getQuote": "Get Free Quote",
+    "chf": "CHF",
+    "indoor": "Indoor",
+    "outdoor": "Outdoor",
+    "freeDesign": "Free design mockup",
+    "warranty": "2 year warranty",
+    "handcrafted": "Handcrafted in Zurich",
+    "freeShipping": "Handcrafted in Zurich"
+  },
+  "stats": {
+    "signsValue": "500+",
+    "signsLabel": "Signs Created",
+    "clientsValue": "98%",
+    "clientsLabel": "Client Satisfaction",
+    "lifespanValue": "50,000h",
+    "lifespanLabel": "LED Lifespan",
+    "warrantyValue": "2 Years",
+    "warrantyLabel": "Full Warranty"
+  },
+  "pages": {
+    "home": {
+      "title": "Make It Neon — Custom LED Neon Signs | Zurich, Switzerland",
+      "description": "Handcrafted LED Neon signs made in Zurich. Design your custom neon sign online with our calculator. Ready-made signs, business signage, and wedding neon."
+    },
+    "calculator": {
+      "title": "Neon Sign Calculator — Design & Price Your Custom Sign | Make It Neon",
+      "description": "Design your custom LED neon sign and get an instant price. Choose text, font, color, and size. Free design mockup included."
+    },
+    "shop": {
+      "title": "Shop LED Neon Signs — Ready-Made Collection | Make It Neon",
+      "description": "Browse our collection of ready-made LED neon signs. Business signs, wedding neon, motivational quotes, and home decor."
+    },
+    "portfolio": {
+      "title": "Our Work — Neon Sign Portfolio | Make It Neon",
+      "description": "See our portfolio of custom LED neon signs installed in cafés, restaurants, homes, and events across Switzerland."
+    },
+    "about": {
+      "title": "About Make It Neon — LED Neon Sign Manufacturer in Zurich",
+      "description": "Learn about Make It Neon, Zurich's premier LED neon sign manufacturer. Handcrafted quality, 2-year warranty, worldwide shipping."
+    },
+    "faq": {
+      "title": "FAQ — Frequently Asked Questions | Make It Neon",
+      "description": "Find answers to common questions about custom LED neon signs, pricing, shipping, installation, and warranty."
+    },
+    "contact": {
+      "title": "Contact Us — Make It Neon | Zurich, Switzerland",
+      "description": "Get in touch with Make It Neon. Contact us for custom neon sign inquiries, quotes, or support. Based in Zurich, Switzerland."
+    },
+    "blog": {
+      "title": "Blog — Neon Sign Ideas & Tips | Make It Neon",
+      "description": "Discover neon sign ideas, tips, and inspiration for your business, home, or event. Expert advice from Make It Neon."
+    },
+    "customOrder": {
+      "title": "Custom Order — Upload Your Design | Make It Neon",
+      "description": "Submit your custom neon sign design, logo, or idea. Get a free design mockup and quote within 24 hours."
+    }
+  },
+  "shop": {
+    "title": "Ready-Made Neon Signs",
+    "subtitle": "Browse our collection of handcrafted LED neon signs for business, weddings, and home decor.",
+    "search": "Search signs...",
+    "allCategories": "All",
+    "business": "Business",
+    "wedding": "Wedding",
+    "motivation": "Motivation",
+    "homeDecor": "Home Decor",
+    "sortPopular": "Popular",
+    "sortPriceAsc": "Price: Low → High",
+    "sortPriceDesc": "Price: High → Low",
+    "sortNew": "Newest",
+    "signsCount": "signs",
+    "noResults": "No signs found",
+    "noResultsHint": "Try a different search or filter.",
+    "resetFilters": "Reset filters",
+    "customCta": "Can't find what you're looking for?",
+    "customCtaText": "Design your own custom neon sign with our calculator.",
+    "designOwn": "Design Your Own Sign",
+    "from": "from",
+    "view": "View"
+  },
+  "product": {
+    "backToShop": "Back to Shop",
+    "color": "Color",
+    "size": "Size",
+    "usage": "Usage",
+    "indoor": "Indoor",
+    "outdoor": "Outdoor",
+    "indoorIncl": "Included",
+    "outdoorExtra": "+40% (IP65)",
+    "quantity": "Quantity",
+    "total": "Total",
+    "inclOutdoor": "incl. outdoor protection",
+    "addToCart": "Add to Cart",
+    "added": "Added!",
+    "includes": "Includes",
+    "specifications": "Specifications",
+    "related": "You Might Also Like",
+    "powerAdapter": "Power adapter",
+    "mountingKit": "Wall mounting kit",
+    "warranty2y": "2 year warranty",
+    "dimmerRemote": "Dimmer & remote",
+    "material": "Material",
+    "materialValue": "LED Neon Flex on Acrylic",
+    "wattage": "Wattage",
+    "lifespan": "Lifespan",
+    "warranty": "Warranty",
+    "delivery": "Delivery",
+    "deliveryValue": "5-7 business days",
+    "reviews": "reviews"
+  },
+  "cart": {
+    "title": "Cart",
+    "item": "item",
+    "items": "items",
+    "empty": "Your cart is empty",
+    "emptyHint": "Discover our collection of handcrafted LED neon signs.",
+    "browseShop": "Browse Shop",
+    "total": "Total",
+    "freeShipping": "Handcrafted in Zurich • 2 year warranty",
+    "requestOrder": "Request Order",
+    "clearCart": "Clear cart",
+    "continueShopping": "Continue shopping"
+  },
+  "customOrder": {
+    "pageTitle": "Custom Order",
+    "pageSubtitle": "Send us your logo, design, or idea — we'll create a free mockup within 24 hours.",
+    "projectType": "Project Type",
+    "textSign": "Text Sign",
+    "textSignDesc": "Custom text in your choice of font and color",
+    "logoSign": "Logo Sign",
+    "logoSignDesc": "Your brand logo recreated in neon",
+    "customShape": "Custom Shape",
+    "customShapeDesc": "Unique shape, artwork or illustration",
+    "description": "Project Description",
+    "descriptionPlaceholder": "Describe your project: desired text, style, where the sign will be mounted...",
+    "uploadFile": "Upload File",
+    "uploadHint": "Drag & drop your file here",
+    "uploadBrowse": "or click to browse",
+    "sizeOptions": "Size & Options",
+    "approximateSize": "Approximate Size",
+    "colorPreference": "Color Preference",
+    "contactDetails": "Contact Details",
+    "fullName": "Full Name",
+    "phone": "Phone",
+    "company": "Company",
+    "sendRequest": "Send Request",
+    "sending": "Sending...",
+    "submitNote": "Free design mockup • Response within 24h • No payment required",
+    "successTitle": "Request Received!",
+    "successMessage": "Thank you! We'll get back to you within 24 hours with a free design mockup.",
+    "howItWorks": "How It Works",
+    "step1Title": "Submit Your Idea",
+    "step1Desc": "Fill out the form with your project details and upload any reference files.",
+    "step2Title": "Free Design Mockup",
+    "step2Desc": "We create a professional mockup of your sign within 24 hours — completely free.",
+    "step3Title": "Approve & Craft",
+    "step3Desc": "Once you approve the design, our artisans handcraft your sign in our Zurich workshop.",
+    "whyUs": "Why Make It Neon?",
+    "calcCta": "Just need a text sign?",
+    "calcCtaDesc": "Use our calculator for instant pricing and live preview of your sign.",
+    "tryCalc": "Try Calculator"
+  },
+  "usp": {
+    "title": "Why Choose Make It Neon?",
+    "subtitle": "We merge traditional craftsmanship with modern LED technology to bring you premium signs that last.",
+    "handcrafted": "Handcrafted in Zurich",
+    "handcraftedDesc": "Every sign is produced in our own Zurich workshop with strict quality control at every stage.",
+    "shipping": "Worldwide Shipping",
+    "shippingDesc": "Free delivery in Switzerland. Professional mounting service available in CH & southern Germany.",
+    "energy": "Energy Efficient LED",
+    "energyDesc": "Consumes 80% less energy than traditional glass neon. Eco-friendly and cool to the touch.",
+    "warranty": "2 Year Warranty",
+    "warrantyDesc": "Full coverage on materials, power supplies, and craftsmanship. Your satisfaction guaranteed."
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "From your idea to a glowing masterpiece — in five simple steps.",
+    "step1Title": "Choose Your Design",
+    "step1Desc": "Pick a ready-made sign from our shop, or create your own using our live configurator. Choose text, font, color, and size — see the result instantly.",
+    "step2Title": "Approve Free Mockup",
+    "step2Desc": "We send you a professional photo-mockup of your sign for approval within 24 hours — completely free, no commitment required.",
+    "step3Title": "Handcrafted Production",
+    "step3Desc": "Once approved, our artisans carefully bend and shape flexible LED neon tubes over a precision-cut acrylic backboard. Production takes 5–7 business days.",
+    "step4Title": "Quality Check & Photo",
+    "step4Desc": "Every sign undergoes a thorough quality inspection and a 24-hour burn-in test. We photograph your finished sign and send it to you before shipping.",
+    "step5Title": "Safe Delivery & Easy Setup",
+    "step5Desc": "Your sign arrives in custom protective packaging with everything included: power adapter, mounting kit, and a step-by-step installation guide. Just plug in and enjoy!",
+    "cta": "Start Designing Now"
+  },
+  "portfolio": {
+    "title": "Our Work",
+    "subtitle": "See our custom LED neon signs in action — installed in cafés, restaurants, homes, and events.",
+    "seeAll": "See All Work",
+    "filterAll": "All",
+    "filterBusiness": "Business",
+    "filterEvents": "Events",
+    "filterHome": "Home",
+    "filterWedding": "Wedding",
+    "pageTitle": "Our Portfolio",
+    "pageSubtitle": "Explore our gallery of custom LED neon signs installed across Switzerland and beyond.",
+    "items": {
+      "cafe_zurich": { "title": "Café Vibes", "category": "Business", "location": "Zurich" },
+      "bar_lucerne": { "title": "Neon Bar", "category": "Business", "location": "Lucerne" },
+      "wedding_bern": { "title": "Wedding Glow", "category": "Wedding", "location": "Bern" },
+      "home_office": { "title": "Dream Big Studio", "category": "Home", "location": "Basel" },
+      "salon_geneva": { "title": "Beauty Salon", "category": "Business", "location": "Geneva" },
+      "restaurant_zug": { "title": "Fine Dining", "category": "Business", "location": "Zug" },
+      "bedroom_modern": { "title": "Sweet Dreams", "category": "Home", "location": "Winterthur" },
+      "wedding_outdoor": { "title": "Garden Wedding", "category": "Wedding", "location": "Interlaken" },
+      "gym_motivation": { "title": "Fitness Studio", "category": "Business", "location": "Zurich" },
+      "office_startup": { "title": "Startup Office", "category": "Business", "location": "Zurich" },
+      "hotel_lobby": { "title": "Hotel Welcome", "category": "Business", "location": "St. Moritz" },
+      "nursery_room": { "title": "Children's Room", "category": "Home", "location": "Lausanne" },
+      "club_entrance": { "title": "Night Club", "category": "Events", "location": "Zurich" },
+      "pop_up_store": { "title": "Pop-Up Store", "category": "Events", "location": "Bern" },
+      "rooftop_bar": { "title": "Rooftop Party", "category": "Events", "location": "Zurich" },
+      "bakery_sign": { "title": "Artisan Bakery", "category": "Business", "location": "Lucerne" },
+      "living_room": { "title": "Cozy Living", "category": "Home", "location": "Bern" },
+      "wedding_arch": { "title": "Floral Arch", "category": "Wedding", "location": "Montreux" },
+      "yoga_studio": { "title": "Yoga Space", "category": "Business", "location": "Zurich" },
+      "event_stage": { "title": "Corporate Event", "category": "Events", "location": "Geneva" }
+    }
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by 120+ happy customers across Switzerland and beyond.",
+    "averageRating": "4.9",
+    "reviewCount": "Based on 120+ reviews",
+    "reviews": [
+      {
+        "name": "Anna Müller",
+        "location": "Zurich",
+        "rating": 5,
+        "text": "The 'Open' sign for my café turned out absolutely stunning. The quality is incredible and it brightens up the whole storefront. Highly recommend!",
+        "category": "Café Owner"
+      },
+      {
+        "name": "Thomas & Sarah Weber",
+        "location": "Bern",
+        "rating": 5,
+        "text": "Our 'Better Together' sign was the highlight of the wedding. Guests couldn't stop taking photos. We now have it in our living room — pure magic.",
+        "category": "Wedding"
+      },
+      {
+        "name": "Marco Bernasconi",
+        "location": "Lucerne",
+        "rating": 5,
+        "text": "Had a custom neon logo made for my barbershop. The team was professional, delivery was fast, and the sign looks even better than expected.",
+        "category": "Barber Shop"
+      },
+      {
+        "name": "Lisa Chen",
+        "location": "Basel",
+        "rating": 5,
+        "text": "I ordered 'Dream Big' for my home office and I smile every time I see it. Great quality, energy-efficient, and the glow is perfect. Love it!",
+        "category": "Home Decor"
+      },
+      {
+        "name": "Reto Zimmermann",
+        "location": "Zurich",
+        "rating": 4,
+        "text": "Excellent craftsmanship. Our restaurant sign has been running 12 hours daily for a year with zero issues. The mounting service was a nice bonus.",
+        "category": "Restaurant"
+      },
+      {
+        "name": "Julia Hofmann",
+        "location": "Winterthur",
+        "rating": 5,
+        "text": "The whole process was so easy — from the online calculator to delivery. The sign arrived perfectly packaged and looks absolutely stunning on our wall.",
+        "category": "Home Decor"
+      },
+      {
+        "name": "David Keller",
+        "location": "St. Gallen",
+        "rating": 5,
+        "text": "We were blown away by the quality. The LED neon looks just like real glass neon but without the fragility. Our bar looks incredible now.",
+        "category": "Bar Owner"
+      },
+      {
+        "name": "Sabrina Meier",
+        "location": "Lausanne",
+        "rating": 5,
+        "text": "From the first mockup to the final installation, the Make It Neon team was responsive and professional. Our beauty salon has never looked better!",
+        "category": "Beauty Salon"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our LED neon signs.",
+    "search": "Search questions...",
+    "noResults": "No questions found. Try a different search term.",
+    "seeAll": "See All FAQ",
+    "categoryOrder": "Ordering & Payment",
+    "categoryProduct": "Product",
+    "categoryShipping": "Shipping & Installation",
+    "items": [
+      {
+        "question": "How do I order a custom neon sign?",
+        "answer": "It's easy! Use our online calculator to enter your text, choose a font, color, and size. You'll see a live preview and instant price. Click 'Order Now' to submit your design, or 'Get Free Quote' to receive a detailed mockup by email.",
+        "category": "order"
+      },
+      {
+        "question": "How long does production take?",
+        "answer": "Standard production time is 5-7 business days. Rush orders (2-3 days) are available for an additional charge. Custom logos and complex designs may take 7-10 business days.",
+        "category": "order"
+      },
+      {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards (Visa, Mastercard, Amex), PayPal, bank transfer (IBAN), and TWINT for Swiss customers. Payment is due upon order confirmation.",
+        "category": "order"
+      },
+      {
+        "question": "Can I cancel or modify my order?",
+        "answer": "You can cancel or modify your order within 24 hours of placing it at no charge. After production has started, modifications may not be possible. Please contact us as soon as possible.",
+        "category": "order"
+      },
+      {
+        "question": "What is LED neon flex?",
+        "answer": "LED neon flex is a modern alternative to traditional glass neon. It uses flexible LED strips encased in a silicone tube to create the same iconic glow. Benefits include: shatterproof, energy-efficient, cool to the touch, and much lighter than glass neon.",
+        "category": "product"
+      },
+      {
+        "question": "How long do LED neon signs last?",
+        "answer": "Our LED neon signs are rated for 50,000+ hours of use — that's over 11 years of continuous operation (12 hours/day). They maintain consistent brightness throughout their lifespan.",
+        "category": "product"
+      },
+      {
+        "question": "What's the difference between indoor and outdoor signs?",
+        "answer": "Indoor signs use a standard power supply and are designed for dry environments. Outdoor signs feature IP65 waterproof rating, UV-resistant materials, and a weatherproof power supply. The price for outdoor versions is 40% higher.",
+        "category": "product"
+      },
+      {
+        "question": "What colors are available?",
+        "answer": "We offer 12 standard colors: White, Warm White, Ice Blue, Blue, Red, Pink, Hot Pink, Purple, Green, Yellow, Orange, and Lemon. We also offer RGB (color-changing) at an additional cost.",
+        "category": "product"
+      },
+      {
+        "question": "Can you make a sign from my logo?",
+        "answer": "Absolutely! We specialize in custom logo neon signs. Simply upload your logo on our Custom Order page, and we'll create a free design mockup within 24 hours. Most logos can be faithfully recreated in LED neon.",
+        "category": "product"
+      },
+      {
+        "question": "Do you ship internationally?",
+        "answer": "Yes! We offer worldwide shipping. Delivery is free within Switzerland. European shipping typically takes 3-5 business days, and worldwide shipments take 7-14 business days. All signs are carefully packaged for safe transit.",
+        "category": "shipping"
+      },
+      {
+        "question": "How is my sign packaged for shipping?",
+        "answer": "Every sign is carefully packaged in custom-fit foam inside a sturdy cardboard box. We add extra padding around edges and connectors. Our packaging is designed to protect your sign during long-distance shipping.",
+        "category": "shipping"
+      },
+      {
+        "question": "Do you offer installation services?",
+        "answer": "Yes, we offer professional installation in Zurich and surrounding areas (up to 100km). For other locations in Switzerland and southern Germany, we can arrange professional mounting upon request. All signs come with a DIY mounting kit included.",
+        "category": "shipping"
+      }
+    ]
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageSubtitle": "Have a question, need a quote, or just want to say hello? We'd love to hear from you.",
+    "infoTitle": "Get In Touch",
+    "address": "Zurich, Switzerland",
+    "addressFull": "Bahnhofstrasse 10, 8001 Zurich, Switzerland",
+    "phone": "+41 XX XXX XX XX",
+    "email": "info@makeitneon.ch",
+    "workingHours": "Mon — Fri, 9:00 — 18:00 CET",
+    "workingHoursNote": "Same-day replies during business hours",
+    "formTitle": "Send Us a Message",
+    "formName": "Your Name",
+    "formNamePlaceholder": "Anna Müller",
+    "formEmail": "Email Address",
+    "formEmailPlaceholder": "anna@example.com",
+    "formSubject": "Subject",
+    "formSubjectPlaceholder": "Custom sign inquiry",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Tell us about your project, ask a question, or just say hello...",
+    "formSend": "Send Message",
+    "formSending": "Sending...",
+    "formRequired": "This field is required",
+    "formInvalidEmail": "Please enter a valid email address",
+    "formMinLength": "Must be at least {{min}} characters",
+    "successTitle": "Message Sent!",
+    "successMessage": "Thank you for reaching out. We'll get back to you within one business day.",
+    "sendAnother": "Send another message",
+    "whatsappTitle": "Prefer to Chat?",
+    "whatsappText": "Get instant answers via WhatsApp. We typically reply within minutes during business hours.",
+    "whatsappButton": "Chat on WhatsApp",
+    "mapTitle": "Visit Our Workshop",
+    "socialTitle": "Follow Us",
+    "socialInstagram": "Instagram",
+    "socialTikTok": "TikTok",
+    "socialFacebook": "Facebook"
+  },
+  "blog": {
+    "pageTitle": "Neon Sign Blog",
+    "pageSubtitle": "Ideas, tips, and inspiration for your LED neon sign project. Expert advice from our Zurich workshop.",
+    "featuredBadge": "Featured",
+    "readMore": "Read Article",
+    "minRead": "min read",
+    "backToBlog": "Back to Blog",
+    "relatedArticles": "Related Articles",
+    "ctaTitle": "Ready to Get Your Own Neon Sign?",
+    "ctaText": "Design your custom sign with our calculator and get instant pricing.",
+    "ctaButton": "Try Calculator",
+    "publishedOn": "Published on",
+    "updatedOn": "Updated",
+    "shareArticle": "Share this article",
+    "allArticles": "All Articles"
+  },
+  "cookies": {
+    "title": "We use cookies 🍪",
+    "description": "We use cookies to analyze site traffic and improve your experience. You can accept or decline analytics cookies. Essential cookies are always active.",
+    "accept": "Accept",
+    "decline": "Decline"
+  }
+}
+

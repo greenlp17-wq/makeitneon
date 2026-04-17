@@ -1,121 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Layout } from '@/components/layout/Layout';
+import { ScrollRestoration } from '@/components/layout/ScrollRestoration';
+import { CartProvider } from '@/hooks/useCart';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Lazy-loaded pages
+const HomePage = lazy(() => import('@/pages/HomePage'));
+const CalculatorPage = lazy(() => import('@/pages/CalculatorPage'));
+const ShopPage = lazy(() => import('@/pages/ShopPage'));
+const ProductPage = lazy(() => import('@/pages/ProductPage'));
+const CustomOrderPage = lazy(() => import('@/pages/CustomOrderPage'));
+const PortfolioPage = lazy(() => import('@/pages/PortfolioPage'));
+const AboutPage = lazy(() => import('@/pages/AboutPage'));
+const FAQPage = lazy(() => import('@/pages/FAQPage'));
+const ContactPage = lazy(() => import('@/pages/ContactPage'));
+const BlogPage = lazy(() => import('@/pages/BlogPage'));
+const BlogPostPage = lazy(() => import('@/pages/BlogPostPage'));
+const RentalPage = lazy(() => import('@/pages/RentalPage'));
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
+// Labs routes
+const LabsHeroesPage = lazy(() => import('@/pages/LabsHeroesPage'));
+const LabsHeadersPage = lazy(() => import('@/pages/LabsHeadersPage'));
+
+// Loading fallback
+function PageLoader() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-8 h-8 border-2 border-neon-pink border-t-transparent rounded-full animate-spin" />
+        <p className="text-sm text-muted-foreground font-medium">Loading...</p>
+      </div>
+    </div>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <CartProvider>
+      <BrowserRouter>
+        <ScrollRestoration />
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            {/* Redirect root to /en */}
+            <Route path="/" element={<Navigate to="/en" replace />} />
+
+            {/* Language-prefixed routes */}
+            <Route path="/:lang" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="calculator" element={<CalculatorPage />} />
+              <Route path="shop" element={<ShopPage />} />
+              <Route path="shop/:slug" element={<ProductPage />} />
+              <Route path="custom-order" element={<CustomOrderPage />} />
+              <Route path="rental" element={<RentalPage />} />
+              <Route path="portfolio" element={<PortfolioPage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="faq" element={<FAQPage />} />
+              <Route path="contact" element={<ContactPage />} />
+              <Route path="blog" element={<BlogPage />} />
+              <Route path="blog/:slug" element={<BlogPostPage />} />
+              
+              {/* HIDDEN LABS ROUTES */}
+              <Route path="_labs/heroes" element={<LabsHeroesPage />} />
+              <Route path="_labs/headers" element={<LabsHeadersPage />} />
+            </Route>
+
+            {/* 404 catch-all */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </CartProvider>
+  );
+}
+
+export default App;

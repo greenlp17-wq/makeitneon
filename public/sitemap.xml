@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://makeitneon.ch/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://makeitneon.ch/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Calculator -->
+  <url>
+    <loc>https://makeitneon.ch/en/calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/calculator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/calculator" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Shop -->
+  <url>
+    <loc>https://makeitneon.ch/en/shop</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/shop" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/shop" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Custom Order -->
+  <url>
+    <loc>https://makeitneon.ch/en/custom-order</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/custom-order" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/custom-order" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Portfolio -->
+  <url>
+    <loc>https://makeitneon.ch/en/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/portfolio" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://makeitneon.ch/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/about" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://makeitneon.ch/en/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/faq" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/faq" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://makeitneon.ch/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/contact" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://makeitneon.ch/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://makeitneon.ch/en/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://makeitneon.ch/de/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
