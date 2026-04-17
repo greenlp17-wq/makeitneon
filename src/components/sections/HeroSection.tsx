@@ -102,7 +102,7 @@ export function HeroSection() {
 
         {/* Aurora layer 1 — slow drift */}
         <div
-          className="absolute w-[200%] h-[200%] -top-[50%] -left-[50%] opacity-40"
+          className="absolute w-[300%] h-[300%] -top-[100%] -left-[100%] opacity-40"
           style={{
             background: `
               radial-gradient(ellipse 50% 35% at 25% 50%, rgba(0,212,255,0.28) 0%, transparent 70%),
@@ -116,7 +116,7 @@ export function HeroSection() {
 
         {/* Aurora layer 2 — opposite direction */}
         <div
-          className="absolute w-[200%] h-[200%] -top-[50%] -left-[50%] opacity-30"
+          className="absolute w-[300%] h-[300%] -top-[100%] -left-[100%] opacity-30"
           style={{
             background: `
               radial-gradient(ellipse 50% 20% at 70% 35%, rgba(255,45,120,0.2) 0%, transparent 70%),
@@ -154,18 +154,6 @@ export function HeroSection() {
             />
           ))}
         </div>
-
-        {/* Static left-edge ambient glow — always present regardless of aurora phase.
-            The animated aurora blobs shift right leaving the far-left dark.           
-            This static overlay ensures the left edge is consistently illuminated.  */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `
-              radial-gradient(ellipse 55% 80% at 0% 50%, rgba(0,180,220,0.12) 0%, transparent 100%)
-            `,
-          }}
-        />
       </div>
 
       {/* ── Content overlay ── */}
