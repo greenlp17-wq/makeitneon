@@ -872,3 +872,23 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }}
+
+/* ── Page Transition ─────────────────────────────────────────────────────── */
+/* Pure CSS fade-in on route change. The key=pathname on the wrapper div      */
+/* causes a DOM remount on navigation, which auto-triggers this animation.    */
+/* No JS animation engine = no transform side-effects, no GSAP interference. */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.page-transition-wrapper {
+  animation: pageFadeIn 0.32s ease-out both;
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-wrapper {
+    animation: none;
+  }
+}
