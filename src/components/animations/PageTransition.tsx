@@ -8,22 +8,19 @@ interface PageTransitionProps {
 const variants = {
   initial: {
     opacity: 0,
-    y: 14,
   },
   animate: {
     opacity: 1,
-    y: 0,
     transition: {
-      duration: 0.38,
-      ease: [0.22, 1, 0.36, 1], // ease-out-expo — snappy and smooth
+      duration: 0.35,
+      ease: 'easeOut',
     },
   },
   exit: {
     opacity: 0,
-    y: -8,
     transition: {
-      duration: 0.22,
-      ease: [0.55, 0, 1, 0.45],
+      duration: 0.2,
+      ease: 'easeIn',
     },
   },
 };
