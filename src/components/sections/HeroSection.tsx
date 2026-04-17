@@ -128,7 +128,7 @@ export function HeroSection() {
 
         {/* Aurora layer 3 — vertical shimmer */}
         <div
-          className="absolute w-full h-full opacity-20"
+          className="absolute w-[150%] h-[150%] -top-[25%] -left-[25%] opacity-20"
           style={{
             background: `
               linear-gradient(175deg, transparent 30%, rgba(0,212,255,0.15) 40%, rgba(57,255,20,0.1) 50%, rgba(191,64,255,0.1) 60%, transparent 70%)
