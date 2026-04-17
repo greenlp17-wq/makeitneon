@@ -4,16 +4,11 @@
     <meta charset="UTF-8" />
 
     <!-- ── Favicons ── -->
-    <!-- SVG favicon (modern browsers) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- PNG fallbacks -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <!-- Apple Touch Icon (iOS home screen) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <!-- Web App Manifest (Android / PWA) -->
     <link rel="manifest" href="/site.webmanifest" />
-    <!-- Theme color (browser chrome on mobile) -->
     <meta name="theme-color" content="#0A0A0F" />
     <meta name="msapplication-TileColor" content="#0A0A0F" />
 
@@ -27,9 +22,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <!-- Calculator fonts loaded locally from /fonts/ via @font-face in index.css -->
+
+    <!-- ── Splash Screen Styles ── -->
+    <!-- Lives entirely in HTML — zero React/GSAP interference -->
+    <style>
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #0A0A0F;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        /* Fade out after 1.1s, then hold invisible for 0.4s before remove */
+        animation: splashFadeOut 0.45s ease-in-out 1.1s forwards;
+      }
+      @keyframes splashFadeOut {
+        to { opacity: 0; pointer-events: none; }
+      }
+      #splash-logo {
+        animation: splashGlow 1.8s ease-in-out infinite alternate;
+        margin-bottom: 20px;
+      }
+      @keyframes splashGlow {
+        from { filter: drop-shadow(0 0 6px #FF2D78); }
+        to   { filter: drop-shadow(0 0 22px #FF2D78) drop-shadow(0 0 8px #ff85aa); }
+      }
+      #splash-label {
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.5);
+        margin-bottom: 24px;
+      }
+      #splash-dots {
+        display: flex;
+        gap: 6px;
+      }
+      #splash-dots span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #FF2D78;
+        animation: splashBounce 1.1s ease-in-out infinite;
+      }
+      #splash-dots span:nth-child(2) { animation-delay: 0.18s; }
+      #splash-dots span:nth-child(3) { animation-delay: 0.36s; }
+      @keyframes splashBounce {
+        0%, 100% { opacity: 0.3; transform: translateY(0); }
+        50%       { opacity: 1;   transform: translateY(-5px); }
+      }
+    </style>
   </head>
   <body>
+    <!-- ── Splash Screen ── -->
+    <!-- Pure HTML/CSS — renders immediately before JS loads.            -->
+    <!-- React & GSAP initialize freely behind this overlay.            -->
+    <!-- Removed from DOM by the script below once animation completes. -->
+    <div id="splash">
+      <div id="splash-logo">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="18" fill="#12121A"/>
+          <!-- Glow layer -->
+          <g opacity="0.45">
+            <line x1="24" y1="18" x2="24" y2="82" stroke="#FF2D78" stroke-width="9" stroke-linecap="round"/>
+            <line x1="24" y1="18" x2="76" y2="82" stroke="#FF2D78" stroke-width="9" stroke-linecap="round"/>
+            <line x1="76" y1="18" x2="76" y2="82" stroke="#FF2D78" stroke-width="9" stroke-linecap="round"/>
+          </g>
+          <!-- Core -->
+          <line x1="24" y1="18" x2="24" y2="82" stroke="#FF2D78" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="24" y1="18" x2="76" y2="82" stroke="#FF2D78" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="76" y1="18" x2="76" y2="82" stroke="#FF2D78" stroke-width="4.5" stroke-linecap="round"/>
+          <!-- Bright highlight -->
+          <line x1="24" y1="18" x2="24" y2="82" stroke="#FFB3CC" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="24" y1="18" x2="76" y2="82" stroke="#FFB3CC" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="76" y1="18" x2="76" y2="82" stroke="#FFB3CC" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div id="splash-label">Make It Neon</div>
+      <div id="splash-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Remove splash from DOM after its fade-out animation completes -->
+    <script>
+      (function() {
+        var el = document.getElementById('splash');
+        if (!el) return;
+        el.addEventListener('animationend', function() {
+          // Brief pause so React has time to paint first frame
+          setTimeout(function() { el.remove(); }, 50);
+        });
+      })();
+    </script>
   </body>
 </html>
