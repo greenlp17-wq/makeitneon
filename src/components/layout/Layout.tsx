@@ -7,6 +7,7 @@ import { ScrollTrigger } from '@/lib/animations';
 import { WhatsAppButton } from '@/components/widgets/WhatsAppButton';
 import { ScrollToTop } from '@/components/widgets/ScrollToTop';
 import { CookieConsent } from '@/components/widgets/CookieConsent';
+import { PageTransition } from '@/components/animations/PageTransition';
 
 export function Layout() {
   const { lang } = useParams();
@@ -29,14 +30,13 @@ export function Layout() {
   }, []);
 
   // Handle route changes gracefully (scroll to top + soft refresh GSAP)
+  // Delay matches the page transition duration (350ms animate + buffer)
   useEffect(() => {
-    // Scroll instantly to top immediately on route change
     window.scrollTo(0, 0);
 
-    // Refresh ScrollTrigger after a slight delay to allow layout to settle
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 150);
+    }, 400);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
@@ -45,7 +45,9 @@ export function Layout() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 pt-20">
-        <Outlet key={location.pathname} />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
 
