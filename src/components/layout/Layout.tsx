@@ -28,30 +28,17 @@ export function Layout() {
     }
   }, []);
 
-  // Refresh GSAP ScrollTrigger after route change
-  // Track previous pathname to differentiate initial mount from navigation
-  const prevPathname = useRef(location.pathname);
+  // Handle route changes gracefully (scroll to top + soft refresh GSAP)
   useEffect(() => {
-    const isNavigation = prevPathname.current !== location.pathname;
-    prevPathname.current = location.pathname;
+    // Scroll instantly to top immediately on route change
+    window.scrollTo(0, 0);
 
-    if (isNavigation) {
-      // On route change: kill old triggers, wait for new DOM, then refresh
-      ScrollTrigger.getAll().forEach(st => st.kill());
-      const raf = requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          ScrollTrigger.refresh();
-          window.scrollTo(0, 0);
-        });
-      });
-      return () => cancelAnimationFrame(raf);
-    } else {
-      // On initial load (or StrictMode re-run): just refresh, don't kill
-      const timer = setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 300);
-      return () => clearTimeout(timer);
-    }
+    // Refresh ScrollTrigger after a slight delay to allow layout to settle
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (

@@ -70,7 +70,7 @@ export function ScrollReveal({
   );
 
   return (
-    <div ref={containerRef} className={cn('will-change-transform opacity-0', className)}>
+    <div ref={containerRef} className={cn('will-change-transform', className)}>
       {children}
     </div>
   );
