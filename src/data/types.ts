@@ -16,9 +16,11 @@ export interface Product {
   id: string;
   slug: string;
   name_en: string;
+  name_uk?: string;
   name_de: string;
   category: ProductCategory;
   description_en: string;
+  description_uk?: string;
   description_de: string;
   availableColors: string[];   // IDs from neonColors
   availableSizes: ProductSize[];

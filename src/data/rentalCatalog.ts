@@ -7,6 +7,7 @@ export interface RentalSign {
   slug: string;
   name: string;
   name_de: string;
+  name_uk?: string;
   category: 'wedding' | 'birthday' | 'business';
   widthCm: number;
   price: number; // CHF per weekend rental
@@ -218,8 +219,10 @@ export interface RentalPackage {
   deposit: number;
   features: string[];
   features_de: string[];
+  features_uk?: string[];
   badge?: string;
   badge_de?: string;
+  badge_uk?: string;
 }
 
 export const rentalPackages: RentalPackage[] = [

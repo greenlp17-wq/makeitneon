@@ -10,31 +10,43 @@ export interface BlogArticle {
   readingTime: number; // minutes
   image: string; // gradient placeholder
   category: string;
-  title: { en: string; de: string };
-  metaDescription: { en: string; de: string };
-  content: { en: string; de: string };
+  title: {
+    en: string;
+    de: string;
+    uk?: string;
+  };
+  metaDescription: {
+    en: string;
+    de: string;
+    uk?: string;
+  };
+  content: {
+    en: string;
+    de: string;
+    uk?: string;
+  };
   relatedSlugs: string[];
 }
-
-export const blogArticles: BlogArticle[] = [
-  {
-    slug: '10-benefits-led-neon-signs-business',
-    datePublished: '2026-03-15',
-    dateModified: '2026-04-01',
-    readingTime: 6,
-    image: '/images/blog/benefits.webp',
-    category: 'Business',
-    title: {
-      en: '10 Benefits of LED Neon Signs for Your Business',
-      de: '10 Vorteile von LED-Neonschildern für Ihr Unternehmen',
-    },
-    metaDescription: {
-      en: 'Discover how LED neon signs can boost your business visibility, attract customers, and enhance brand recognition. From energy efficiency to customization options.',
-      de: 'Erfahren Sie, wie LED-Neonschilder die Sichtbarkeit Ihres Unternehmens steigern, Kunden anziehen und die Markenbekanntheit verbessern können.',
-    },
-    relatedSlugs: ['how-custom-neon-signs-are-made', 'neon-sign-ideas-restaurants-cafes-bars'],
-    content: {
-      en: `## Why LED Neon Signs Are a Game-Changer for Businesses
+export const blogArticles: BlogArticle[] = [{
+  slug: '10-benefits-led-neon-signs-business',
+  datePublished: '2026-03-15',
+  dateModified: '2026-04-01',
+  readingTime: 6,
+  image: '/images/blog/benefits.webp',
+  category: 'Business',
+  title: {
+    en: '10 Benefits of LED Neon Signs for Your Business',
+    de: '10 Vorteile von LED-Neonschildern für Ihr Unternehmen',
+    uk: "10 \u041F\u0435\u0440\u0435\u0432\u0430\u0433 LED \u041D\u0435\u043E\u043D\u043E\u0432\u0438\u0445 \u0412\u0438\u0432\u0456\u0441\u043E\u043A \u0434\u043B\u044F \u0412\u0430\u0448\u043E\u0433\u043E \u0411\u0456\u0437\u043D\u0435\u0441\u0443"
+  },
+  metaDescription: {
+    en: 'Discover how LED neon signs can boost your business visibility, attract customers, and enhance brand recognition. From energy efficiency to customization options.',
+    de: 'Erfahren Sie, wie LED-Neonschilder die Sichtbarkeit Ihres Unternehmens steigern, Kunden anziehen und die Markenbekanntheit verbessern können.',
+    uk: "\u0414\u0456\u0437\u043D\u0430\u0439\u0442\u0435\u0441\u044F, \u044F\u043A LED \u043D\u0435\u043E\u043D\u043E\u0432\u0456 \u0432\u0438\u0432\u0456\u0441\u043A\u0438 \u043C\u043E\u0436\u0443\u0442\u044C \u043F\u0456\u0434\u0432\u0438\u0449\u0438\u0442\u0438 \u0432\u043F\u0456\u0437\u043D\u0430\u0432\u0430\u043D\u0456\u0441\u0442\u044C \u0432\u0430\u0448\u043E\u0433\u043E \u0431\u0456\u0437\u043D\u0435\u0441\u0443..."
+  },
+  relatedSlugs: ['how-custom-neon-signs-are-made', 'neon-sign-ideas-restaurants-cafes-bars'],
+  content: {
+    en: `## Why LED Neon Signs Are a Game-Changer for Businesses
 
 In today's competitive marketplace, standing out is everything. LED neon signs have emerged as one of the most effective tools for businesses looking to capture attention, build brand identity, and create memorable customer experiences. Here are ten compelling reasons to invest in LED neon signage for your business.
 
@@ -85,7 +97,7 @@ LED technology is inherently more sustainable. Lower power consumption means low
 Whether you're opening a new restaurant in Zurich, refreshing your salon's look, or creating a standout trade show booth, a custom LED neon sign is the perfect investment. At Make It Neon, every sign is handcrafted in our Zurich workshop with a 2-year warranty and free worldwide shipping.
 
 **[Try our online calculator](/en/calculator) to design your sign and get instant pricing, or [contact us](/en/contact) for a free consultation.**`,
-      de: `## Warum LED-Neonschilder ein Gamechanger für Unternehmen Sind
+    de: `## Warum LED-Neonschilder ein Gamechanger für Unternehmen Sind
 
 In der heutigen wettbewerbsintensiven Geschäftswelt ist es entscheidend, aufzufallen. LED-Neonschilder haben sich als eines der effektivsten Werkzeuge für Unternehmen etabliert, die Aufmerksamkeit erregen, ihre Markenidentität aufbauen und unvergessliche Kundenerlebnisse schaffen möchten. Hier sind zehn überzeugende Gründe, in LED-Neonbeschilderung für Ihr Unternehmen zu investieren.
 
@@ -136,26 +148,28 @@ LED-Technologie ist von Natur aus nachhaltiger. Geringerer Stromverbrauch bedeut
 Ob Sie ein neues Restaurant in Zürich eröffnen, Ihren Salon auffrischen oder einen auffälligen Messestand gestalten — ein individuelles LED-Neonschild ist die perfekte Investition. Bei Make It Neon wird jedes Schild in unserer Zürcher Werkstatt mit 2-Jahres-Garantie und kostenlosem weltweitem Versand handgefertigt.
 
 **[Probieren Sie unseren Online-Konfigurator](/de/calculator) aus, um Ihr Schild zu gestalten und sofortige Preise zu erhalten, oder [kontaktieren Sie uns](/de/contact) für eine kostenlose Beratung.**`,
-    },
+    uk: "## \u0427\u043E\u043C\u0443 LED \u041D\u0435\u043E\u043D\u043E\u0432\u0456 \u0412\u0438\u0432\u0456\u0441\u043A\u0438 \u2014 \u0426\u0435 \u0417\u043D\u0430\u0445\u0456\u0434\u043A\u0430 \u0414\u043B\u044F \u0411\u0456\u0437\u043D\u0435\u0441\u0443\n\n\u0423 \u0441\u0443\u0447\u0430\u0441\u043D\u043E\u043C\u0443 \u043A\u043E\u043D\u043A\u0443\u0440\u0435\u043D\u0442\u043D\u043E\u043C\u0443 \u0441\u0435\u0440\u0435\u0434\u043E\u0432\u0438\u0449\u0456 \u0432\u0430\u0436\u043B\u0438\u0432\u043E \u0432\u0438\u0434\u0456\u043B\u044F\u0442\u0438\u0441\u044F. LED \u043D\u0435\u043E\u043D\u043E\u0432\u0456 \u0432\u0438\u0432\u0456\u0441\u043A\u0438 \u0441\u0442\u0430\u043B\u0438 \u043E\u0434\u043D\u0438\u043C \u0437 \u043D\u0430\u0439\u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0456\u0448\u0438\u0445 \u0456\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0456\u0432 \u0434\u043B\u044F \u043A\u043E\u043C\u043F\u0430\u043D\u0456\u0439, \u044F\u043A\u0456 \u043F\u0440\u0430\u0433\u043D\u0443\u0442\u044C \u043F\u0440\u0438\u0432\u0435\u0440\u043D\u0443\u0442\u0438 \u0443\u0432\u0430\u0433\u0443...\n\n### 1. \u041D\u0435\u043F\u0435\u0440\u0435\u0432\u0435\u0440\u0448\u0435\u043D\u0430 \u0412\u0438\u0434\u0438\u043C\u0456\u0441\u0442\u044C \u2014 \u0412\u0434\u0435\u043D\u044C \u0456 \u0412\u043D\u043E\u0447\u0456\n\nLED \u043D\u0435\u043E\u043D\u043E\u0432\u0456 \u0432\u0438\u0432\u0456\u0441\u043A\u0438 \u0441\u0442\u0432\u043E\u0440\u0435\u043D\u0456, \u0449\u043E\u0431 \u043D\u0430 \u043D\u0438\u0445 \u0434\u0438\u0432\u0438\u043B\u0438\u0441\u044F. \u0412\u043E\u043D\u0438 \u044F\u0441\u043A\u0440\u0430\u0432\u0456 \u0439 \u0435\u043A\u043E\u043D\u043E\u043C\u043D\u0456."
+  }
+}, {
+  slug: 'how-custom-neon-signs-are-made',
+  datePublished: '2026-03-22',
+  dateModified: '2026-04-05',
+  readingTime: 7,
+  image: '/images/blog/how-made.webp',
+  category: 'Behind the Scenes',
+  title: {
+    en: 'How Custom Neon Signs Are Made: Behind the Scenes',
+    de: 'Wie Individuelle Neonschilder Hergestellt Werden: Hinter den Kulissen',
+    uk: "\u042F\u043A \u0412\u0438\u0433\u043E\u0442\u043E\u0432\u043B\u044F\u044E\u0442\u044C \u041A\u0430\u0441\u0442\u043E\u043C\u043D\u0456 \u041D\u0435\u043E\u043D\u043E\u0432\u0456 \u0412\u0438\u0432\u0456\u0441\u043A\u0438: \u0417\u0430 \u041B\u0430\u0448\u0442\u0443\u043D\u043A\u0430\u043C\u0438"
   },
-  {
-    slug: 'how-custom-neon-signs-are-made',
-    datePublished: '2026-03-22',
-    dateModified: '2026-04-05',
-    readingTime: 7,
-    image: '/images/blog/how-made.webp',
-    category: 'Behind the Scenes',
-    title: {
-      en: 'How Custom Neon Signs Are Made: Behind the Scenes',
-      de: 'Wie Individuelle Neonschilder Hergestellt Werden: Hinter den Kulissen',
-    },
-    metaDescription: {
-      en: 'Step inside our Zurich workshop and discover the step-by-step process of creating custom LED neon signs — from digital design to final quality inspection.',
-      de: 'Werfen Sie einen Blick in unsere Zürcher Werkstatt und entdecken Sie den Schritt-für-Schritt-Prozess der Herstellung individueller LED-Neonschilder.',
-    },
-    relatedSlugs: ['10-benefits-led-neon-signs-business', 'indoor-vs-outdoor-neon-signs'],
-    content: {
-      en: `## From Concept to Glow: The Art of Making LED Neon Signs
+  metaDescription: {
+    en: 'Step inside our Zurich workshop and discover the step-by-step process of creating custom LED neon signs — from digital design to final quality inspection.',
+    de: 'Werfen Sie einen Blick in unsere Zürcher Werkstatt und entdecken Sie den Schritt-für-Schritt-Prozess der Herstellung individueller LED-Neonschilder.',
+    uk: "\u0417\u0430\u0437\u0438\u0440\u043D\u0456\u0442\u044C \u0443 \u043D\u0430\u0448\u0443 \u043C\u0430\u0439\u0441\u0442\u0435\u0440\u043D\u044E \u0432 \u0426\u044E\u0440\u0438\u0445\u0443 \u0442\u0430 \u0434\u0456\u0437\u043D\u0430\u0439\u0442\u0435\u0441\u044F, \u044F\u043A \u043C\u0438 \u0441\u0442\u0432\u043E\u0440\u044E\u0454\u043C\u043E \u043D\u0435\u043E\u043D\u043E\u0432\u0456 \u0432\u0438\u0432\u0456\u0441\u043A\u0438..."
+  },
+  relatedSlugs: ['10-benefits-led-neon-signs-business', 'indoor-vs-outdoor-neon-signs'],
+  content: {
+    en: `## From Concept to Glow: The Art of Making LED Neon Signs
 
 Ever wondered how a simple idea becomes a stunning neon sign hanging on your wall? At Make It Neon, we combine cutting-edge technology with traditional craftsmanship to create signs that are truly one of a kind. Here's a behind-the-scenes look at our production process.
 
@@ -210,7 +224,7 @@ Each sign is individually wrapped in foam padding, placed in a custom-fit wooden
 ## Want to See the Process in Person?
 
 We offer workshop tours by appointment for anyone interested in seeing how their sign is made. [Contact us](/en/contact) to book a visit to our Zurich studio!`,
-      de: `## Vom Konzept zum Leuchten: Die Kunst der LED-Neonschild-Herstellung
+    de: `## Vom Konzept zum Leuchten: Die Kunst der LED-Neonschild-Herstellung
 
 Haben Sie sich jemals gefragt, wie aus einer einfachen Idee ein atemberaubendes Neonschild wird, das an Ihrer Wand hängt? Bei Make It Neon verbinden wir modernste Technologie mit traditionellem Handwerk, um Schilder zu schaffen, die wirklich einzigartig sind. Hier ist ein Blick hinter die Kulissen unseres Produktionsprozesses.
 
@@ -253,26 +267,28 @@ Jedes Schild wird einzeln in Schaumstoffpolsterung eingewickelt und in einer ver
 ## Möchten Sie den Prozess Persönlich Sehen?
 
 Wir bieten nach Vereinbarung Werkstattführungen für alle an, die sehen möchten, wie ihr Schild hergestellt wird. [Kontaktieren Sie uns](/de/contact), um einen Besuch in unserem Zürcher Studio zu buchen!`,
-    },
+    uk: "## \u0412\u0456\u0434 \u041A\u043E\u043D\u0446\u0435\u043F\u0442\u0443 \u0434\u043E \u0421\u044F\u0439\u0432\u0430: \u042F\u043A \u043C\u0438 \u0420\u043E\u0431\u0438\u043C\u043E \u0412\u0438\u0432\u0456\u0441\u043A\u0438\n\n\u0412\u0438 \u043A\u043E\u043B\u0438-\u043D\u0435\u0431\u0443\u0434\u044C \u0446\u0456\u043A\u0430\u0432\u0438\u043B\u0438\u0441\u044F, \u044F\u043A \u0437\u0432\u0438\u0447\u0430\u0439\u043D\u0430 \u0456\u0434\u0435\u044F \u043F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u044E\u0454\u0442\u044C\u0441\u044F \u043D\u0430 \u0432\u0438\u0448\u0443\u043A\u0430\u043D\u0443 \u043D\u0435\u043E\u043D\u043E\u0432\u0443 \u0432\u0438\u0432\u0456\u0441\u043A\u0443? \u0423 Make It Neon \u043C\u0438 \u043F\u043E\u0454\u0434\u043D\u0443\u0454\u043C\u043E \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0457 \u0442\u0430 \u0440\u0443\u0447\u043D\u0443 \u0440\u043E\u0431\u043E\u0442\u0443.\n\n### \u041A\u0440\u043E\u043A 1: \u0414\u0438\u0437\u0430\u0439\u043D \u0442\u0430 \u0426\u0438\u0444\u0440\u043E\u0432\u0435 \u041F\u043B\u0430\u043D\u0443\u0432\u0430\u043D\u043D\u044F\n\n\u041A\u043E\u0436\u0435\u043D \u043F\u0440\u043E\u0454\u043A\u0442 \u043F\u043E\u0447\u0438\u043D\u0430\u0454\u0442\u044C\u0441\u044F \u0437 \u043A\u043E\u043D\u0446\u0435\u043F\u0446\u0456\u0457."
+  }
+}, {
+  slug: 'neon-sign-ideas-restaurants-cafes-bars',
+  datePublished: '2026-03-28',
+  dateModified: '2026-04-10',
+  readingTime: 5,
+  image: '/images/blog/restaurant.webp',
+  category: 'Inspiration',
+  title: {
+    en: 'Neon Sign Ideas for Restaurants, Cafés and Bars',
+    de: 'Neonschild-Ideen für Restaurants, Cafés und Bars',
+    uk: "\u0406\u0434\u0435\u0457 \u041D\u0435\u043E\u043D\u043E\u0432\u0438\u0445 \u0412\u0438\u0432\u0456\u0441\u043E\u043A \u0434\u043B\u044F \u0420\u0435\u0441\u0442\u043E\u0440\u0430\u043D\u0456\u0432, \u041A\u0430\u0444\u0435 \u0442\u0430 \u0411\u0430\u0440\u0456\u0432"
   },
-  {
-    slug: 'neon-sign-ideas-restaurants-cafes-bars',
-    datePublished: '2026-03-28',
-    dateModified: '2026-04-10',
-    readingTime: 5,
-    image: '/images/blog/restaurant.webp',
-    category: 'Inspiration',
-    title: {
-      en: 'Neon Sign Ideas for Restaurants, Cafés and Bars',
-      de: 'Neonschild-Ideen für Restaurants, Cafés und Bars',
-    },
-    metaDescription: {
-      en: 'Get inspired with creative neon sign ideas for your restaurant, café, or bar. From welcomes to cocktail menus, discover designs that set the perfect mood.',
-      de: 'Lassen Sie sich inspirieren mit kreativen Neonschild-Ideen für Ihr Restaurant, Café oder Ihre Bar. Entdecken Sie Designs, die die perfekte Stimmung schaffen.',
-    },
-    relatedSlugs: ['10-benefits-led-neon-signs-business', 'how-to-choose-right-size-neon-sign'],
-    content: {
-      en: `## Setting the Mood with Neon: Ideas for the Hospitality Industry
+  metaDescription: {
+    en: 'Get inspired with creative neon sign ideas for your restaurant, café, or bar. From welcomes to cocktail menus, discover designs that set the perfect mood.',
+    de: 'Lassen Sie sich inspirieren mit kreativen Neonschild-Ideen für Ihr Restaurant, Café oder Ihre Bar. Entdecken Sie Designs, die die perfekte Stimmung schaffen.',
+    uk: "\u041D\u0430\u0434\u0438\u0445\u043D\u0456\u0442\u044C\u0441\u044F \u0456\u0434\u0435\u044F\u043C\u0438 \u0434\u043B\u044F \u0432\u0430\u0448\u043E\u0433\u043E \u0440\u0435\u0441\u0442\u043E\u0440\u0430\u043D\u0443 \u0447\u0438 \u0431\u0430\u0440\u0443. \u0412\u0456\u0434 'Welcome' \u0434\u043E \u043A\u043E\u043A\u0442\u0435\u0439\u043B\u044C\u043D\u0438\u0445 \u043C\u0435\u043D\u044E."
+  },
+  relatedSlugs: ['10-benefits-led-neon-signs-business', 'how-to-choose-right-size-neon-sign'],
+  content: {
+    en: `## Setting the Mood with Neon: Ideas for the Hospitality Industry
 
 There's something magical about walking into a restaurant or bar and being greeted by the warm glow of a neon sign. It instantly sets the tone, creates atmosphere, and gives your establishment a unique personality. Here are our favorite neon sign ideas for the hospitality industry.
 
@@ -338,7 +354,7 @@ Where you place your neon sign matters as much as the design:
 ## Let's Create Something Amazing
 
 Every restaurant, café, and bar has a unique story. Let's tell yours in neon. **[Browse our ready-made collection](/en/shop) for instant inspiration, or [design your own](/en/calculator) custom sign.**`,
-      de: `## Stimmung Setzen mit Neon: Ideen für die Gastronomie
+    de: `## Stimmung Setzen mit Neon: Ideen für die Gastronomie
 
 Es gibt etwas Magisches daran, ein Restaurant oder eine Bar zu betreten und vom warmen Leuchten eines Neonschilds begrüsst zu werden. Es setzt sofort den Ton, schafft Atmosphäre und verleiht Ihrem Betrieb eine einzigartige Persönlichkeit. Hier sind unsere liebsten Neonschild-Ideen für die Gastronomie.
 
@@ -385,26 +401,28 @@ Wo Sie Ihr Neonschild platzieren, ist genauso wichtig wie das Design:
 ## Lassen Sie uns etwas Erstaunliches Schaffen
 
 Jedes Restaurant, Café und jede Bar hat eine einzigartige Geschichte. Lassen Sie uns Ihre in Neon erzählen. **[Stöbern Sie in unserer Kollektion](/de/shop) für sofortige Inspiration, oder [gestalten Sie Ihr eigenes](/de/calculator) individuelles Schild.**`,
-    },
+    uk: "## \u0421\u0442\u0432\u043E\u0440\u044E\u0454\u043C\u043E \u041D\u0430\u0441\u0442\u0440\u0456\u0439 \u041D\u0435\u043E\u043D\u043E\u043C\n\n\u0404 \u0449\u043E\u0441\u044C \u043C\u0430\u0433\u0456\u0447\u043D\u0435 \u0443 \u0442\u043E\u043C\u0443, \u0449\u043E\u0431 \u0437\u0430\u0432\u0456\u0442\u0430\u0442\u0438 \u0434\u043E \u0431\u0430\u0440\u0443 \u0456 \u0432\u0456\u0434\u0447\u0443\u0442\u0438 \u0442\u0435\u043F\u043B\u0435 \u043D\u0435\u043E\u043D\u043E\u0432\u0435 \u0441\u0432\u0456\u0442\u043B\u043E. \u0412\u043E\u043D\u043E \u0432\u0456\u0434\u0440\u0430\u0437\u0443 \u0437\u0430\u0434\u0430\u0454 \u0442\u043E\u043D \u0437\u0430\u043A\u043B\u0430\u0434\u0443.\n\n### \u0412\u0438\u0432\u0456\u0441\u043A\u0438 \u043D\u0430 \u0412\u0445\u043E\u0434\u0456\n\n\u041A\u043B\u0430\u0441\u0438\u0447\u043D\u0435 'Welcome' \u043D\u0456\u043A\u043E\u043B\u0438 \u043D\u0435 \u0441\u0442\u0430\u0440\u0456\u0454."
+  }
+}, {
+  slug: 'indoor-vs-outdoor-neon-signs',
+  datePublished: '2026-04-01',
+  dateModified: '2026-04-12',
+  readingTime: 5,
+  image: '/images/blog/indoor-outdoor.webp',
+  category: 'Guide',
+  title: {
+    en: 'Indoor vs Outdoor Neon Signs: What You Need to Know',
+    de: 'Indoor vs Outdoor Neonschilder: Was Sie Wissen Müssen',
+    uk: "\u0412\u0443\u043B\u0438\u0447\u043D\u0456 vs \u041A\u0456\u043C\u043D\u0430\u0442\u043D\u0456 \u0412\u0438\u0432\u0456\u0441\u043A\u0438: \u0412\u0441\u0435 \u0429\u043E \u0422\u0440\u0435\u0431\u0430 \u0417\u043D\u0430\u0442\u0438"
   },
-  {
-    slug: 'indoor-vs-outdoor-neon-signs',
-    datePublished: '2026-04-01',
-    dateModified: '2026-04-12',
-    readingTime: 5,
-    image: '/images/blog/indoor-outdoor.webp',
-    category: 'Guide',
-    title: {
-      en: 'Indoor vs Outdoor Neon Signs: What You Need to Know',
-      de: 'Indoor vs Outdoor Neonschilder: Was Sie Wissen Müssen',
-    },
-    metaDescription: {
-      en: 'Understand the key differences between indoor and outdoor LED neon signs including IP ratings, weatherproofing, mounting options, and pricing to make the right choice.',
-      de: 'Verstehen Sie die wichtigsten Unterschiede zwischen Indoor- und Outdoor-LED-Neonschildern — einschliesslich IP-Schutzarten, Wetterfestigkeit und Preise.',
-    },
-    relatedSlugs: ['how-custom-neon-signs-are-made', 'how-to-choose-right-size-neon-sign'],
-    content: {
-      en: `## Indoor vs Outdoor: Choosing the Right Neon Sign
+  metaDescription: {
+    en: 'Understand the key differences between indoor and outdoor LED neon signs including IP ratings, weatherproofing, mounting options, and pricing to make the right choice.',
+    de: 'Verstehen Sie die wichtigsten Unterschiede zwischen Indoor- und Outdoor-LED-Neonschildern — einschliesslich IP-Schutzarten, Wetterfestigkeit und Preise.',
+    uk: "\u0420\u043E\u0437\u0443\u043C\u0456\u043D\u043D\u044F \u0440\u0456\u0437\u043D\u0438\u0446\u0456 \u043C\u0456\u0436 \u0432\u0438\u0432\u0456\u0441\u043A\u0430\u043C\u0438 \u0434\u043B\u044F \u043F\u0440\u0438\u043C\u0456\u0449\u0435\u043D\u044C \u0456 \u0434\u043B\u044F \u0432\u0443\u043B\u0438\u0446\u0456: \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u0438 IP, \u0446\u0456\u043D\u0438 \u0442\u0430 \u043C\u043E\u043D\u0442\u0430\u0436."
+  },
+  relatedSlugs: ['how-custom-neon-signs-are-made', 'how-to-choose-right-size-neon-sign'],
+  content: {
+    en: `## Indoor vs Outdoor: Choosing the Right Neon Sign
 
 One of the most common questions we receive at Make It Neon is: "Can I put my neon sign outside?" The answer is yes — but there are important differences to understand before deciding. This guide breaks down everything you need to know.
 
@@ -470,7 +488,7 @@ An indoor sign works perfectly when:
 ## Not Sure Which to Choose?
 
 Our team can help you decide based on your specific location and requirements. **[Contact us](/en/contact) for a free consultation, or [try our calculator](/en/calculator) and select your indoor/outdoor preference.**`,
-      de: `## Indoor vs Outdoor: Das Richtige Neonschild Wählen
+    de: `## Indoor vs Outdoor: Das Richtige Neonschild Wählen
 
 Eine der häufigsten Fragen, die wir bei Make It Neon erhalten, ist: "Kann ich mein Neonschild draussen aufhängen?" Die Antwort ist ja — aber es gibt wichtige Unterschiede, die Sie verstehen sollten. Dieser Leitfaden erklärt alles, was Sie wissen müssen.
 
@@ -511,26 +529,28 @@ IP steht für "Ingress Protection" — ein Standard-Bewertungssystem, das angibt
 ## Nicht Sicher, Welches Sie Wählen Sollen?
 
 Unser Team kann Ihnen basierend auf Ihrem spezifischen Standort und Ihren Anforderungen bei der Entscheidung helfen. **[Kontaktieren Sie uns](/de/contact) für eine kostenlose Beratung, oder [probieren Sie unseren Konfigurator](/de/calculator) aus.**`,
-    },
+    uk: "## \u042F\u043A \u0412\u0438\u0431\u0440\u0430\u0442\u0438 \u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0443 \u0412\u0438\u0432\u0456\u0441\u043A\u0443\n\n\u041E\u0434\u043D\u0435 \u0437 \u043D\u0430\u0439\u0447\u0430\u0441\u0442\u0456\u0448\u0438\u0445 \u043F\u0438\u0442\u0430\u043D\u044C \u2014 '\u0447\u0438 \u043C\u043E\u0436\u0443 \u044F \u043F\u043E\u0432\u0456\u0441\u0438\u0442\u0438 \u043D\u0435\u043E\u043D \u043D\u0430 \u0432\u0443\u043B\u0438\u0446\u0456?'. \u0412\u0456\u0434\u043F\u043E\u0432\u0456\u0434\u044C \u2014 \u0442\u0430\u043A, \u0430\u043B\u0435 \u0454 \u043A\u043B\u044E\u0447\u043E\u0432\u0456 \u0440\u0456\u0437\u043D\u0438\u0446\u0456, \u044F\u043A\u0456 \u0442\u0440\u0435\u0431\u0430 \u0437\u043D\u0430\u0442\u0438."
+  }
+}, {
+  slug: 'how-to-choose-right-size-neon-sign',
+  datePublished: '2026-04-08',
+  dateModified: '2026-04-12',
+  readingTime: 4,
+  image: '/images/blog/size.webp',
+  category: 'Guide',
+  title: {
+    en: 'How to Choose the Right Size for Your Neon Sign',
+    de: 'So Wählen Sie die Richtige Grösse für Ihr Neonschild',
+    uk: "\u042F\u043A \u041E\u0431\u0440\u0430\u0442\u0438 \u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0438\u0439 \u0420\u043E\u0437\u043C\u0456\u0440 \u0434\u043B\u044F \u041D\u0435\u043E\u043D\u043E\u0432\u043E\u0457 \u0412\u0438\u0432\u0456\u0441\u043A\u0438"
   },
-  {
-    slug: 'how-to-choose-right-size-neon-sign',
-    datePublished: '2026-04-08',
-    dateModified: '2026-04-12',
-    readingTime: 4,
-    image: '/images/blog/size.webp',
-    category: 'Guide',
-    title: {
-      en: 'How to Choose the Right Size for Your Neon Sign',
-      de: 'So Wählen Sie die Richtige Grösse für Ihr Neonschild',
-    },
-    metaDescription: {
-      en: 'Learn how to pick the perfect size for your LED neon sign based on wall space, viewing distance, and text length. Includes a handy sizing chart.',
-      de: 'Erfahren Sie, wie Sie die perfekte Grösse für Ihr LED-Neonschild basierend auf Wandfläche, Betrachtungsabstand und Textlänge wählen.',
-    },
-    relatedSlugs: ['indoor-vs-outdoor-neon-signs', 'neon-sign-ideas-restaurants-cafes-bars'],
-    content: {
-      en: `## Getting the Size Right: A Complete Guide
+  metaDescription: {
+    en: 'Learn how to pick the perfect size for your LED neon sign based on wall space, viewing distance, and text length. Includes a handy sizing chart.',
+    de: 'Erfahren Sie, wie Sie die perfekte Grösse für Ihr LED-Neonschild basierend auf Wandfläche, Betrachtungsabstand und Textlänge wählen.',
+    uk: "\u0412\u0447\u0438\u043C\u043E\u0441\u044F \u043F\u0456\u0434\u0431\u0438\u0440\u0430\u0442\u0438 \u0456\u0434\u0435\u0430\u043B\u044C\u043D\u0438\u0439 \u0440\u043E\u0437\u043C\u0456\u0440 LED \u043D\u0435\u043E\u043D\u043E\u0432\u043E\u0457 \u0432\u0438\u0432\u0456\u0441\u043A\u0438."
+  },
+  relatedSlugs: ['indoor-vs-outdoor-neon-signs', 'neon-sign-ideas-restaurants-cafes-bars'],
+  content: {
+    en: `## Getting the Size Right: A Complete Guide
 
 Choosing the right size for your neon sign is crucial. Too small and it gets lost on the wall; too large and it overwhelms the space. Here's how to get it just right.
 
@@ -597,7 +617,7 @@ For custom sizes outside these ranges, [contact us](/en/contact) for a quote.
 ## Still Unsure? Let Our Calculator Help
 
 Our **[online calculator](/en/calculator)** shows you a real-time preview of your sign at different sizes, with instant pricing. Try it now to find your perfect fit!`,
-      de: `## Die Richtige Grösse Finden: Ein Kompletter Leitfaden
+    de: `## Die Richtige Grösse Finden: Ein Kompletter Leitfaden
 
 Die Wahl der richtigen Grösse für Ihr Neonschild ist entscheidend. Zu klein und es geht an der Wand verloren; zu gross und es überwältigt den Raum. So treffen Sie die richtige Wahl.
 
@@ -652,16 +672,12 @@ Bei Make It Neon bieten wir vier Standardgrössen:
 ## Immer noch Unsicher? Unser Konfigurator Hilft
 
 Unser **[Online-Konfigurator](/de/calculator)** zeigt Ihnen eine Echtzeit-Vorschau Ihres Schildes in verschiedenen Grössen, mit sofortiger Preisberechnung. Probieren Sie es jetzt aus!`,
-    },
-  },
-];
-
+    uk: "## \u0412\u0438\u0431\u0438\u0440\u0430\u0454\u043C\u043E \u0420\u043E\u0437\u043C\u0456\u0440 \u044F\u043A \u041F\u0440\u043E\u0444\u0456\n\n\u0412\u0438\u0431\u0456\u0440 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0433\u043E \u0440\u043E\u0437\u043C\u0456\u0440\u0443 \u2014 \u0446\u0435 \u043A\u0440\u0438\u0442\u0438\u0447\u043D\u0438\u0439 \u043A\u0440\u043E\u043A. \u0417\u0430\u043D\u0430\u0434\u0442\u043E \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0430 \u0432\u0438\u0432\u0456\u0441\u043A\u0430 \u0437\u0430\u0433\u0443\u0431\u0438\u0442\u044C\u0441\u044F \u043D\u0430 \u0441\u0442\u0456\u043D\u0456, \u0430 \u043D\u0430\u0434\u0442\u043E \u0432\u0435\u043B\u0438\u043A\u0430 \u0431\u0443\u0434\u0435 \u0442\u0438\u0441\u043D\u0443\u0442\u0438 \u043D\u0430 \u043A\u0456\u043C\u043D\u0430\u0442\u0443."
+  }
+}];
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
   return blogArticles.find(a => a.slug === slug);
 }
-
 export function getRelatedArticles(article: BlogArticle): BlogArticle[] {
-  return article.relatedSlugs
-    .map(slug => blogArticles.find(a => a.slug === slug))
-    .filter((a): a is BlogArticle => !!a);
+  return article.relatedSlugs.map(slug => blogArticles.find(a => a.slug === slug)).filter((a): a is BlogArticle => !!a);
 }
