@@ -188,7 +188,7 @@ export function HeroSection() {
             <motion.span
               animate={{ letterSpacing: ['0.02em', '0.08em', '0.02em'] }}
               transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-green to-neon-violet"
+              className="block gradient-neon-text"
             >
               NEON
             </motion.span>
