@@ -42,9 +42,9 @@ export interface CartItem {
   isOutdoor: boolean;
 }
 
-export const CATEGORY_LABELS: Record<ProductCategory, { en: string; de: string }> = {
-  'business':    { en: 'Business',    de: 'Business' },
-  'wedding':     { en: 'Wedding',     de: 'Hochzeit' },
-  'motivation':  { en: 'Motivation',  de: 'Motivation' },
-  'home-decor':  { en: 'Home Decor',  de: 'Wohndeko' },
+export const CATEGORY_LABELS: Record<ProductCategory, { en: string; de: string; uk: string }> = {
+  'business':    { en: 'Business',    de: 'Business', uk: 'Бізнес' },
+  'wedding':     { en: 'Wedding',     de: 'Hochzeit', uk: 'Весілля' },
+  'motivation':  { en: 'Motivation',  de: 'Motivation', uk: 'Мотивація' },
+  'home-decor':  { en: 'Home Decor',  de: 'Wohndeko', uk: 'Декор для дому' },
 };

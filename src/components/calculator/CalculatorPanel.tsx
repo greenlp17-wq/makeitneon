@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+
 import {
   AlignLeft, AlignCenter, AlignRight,
   Check, Shield, Clock, Truck,
@@ -13,7 +13,6 @@ import { FontSelector } from './FontSelector';
 import { OrderModal } from './OrderModal';
 
 export function CalculatorPanel({ calcState }: { calcState: UseNeonCalculatorReturn }) {
-  const { lang } = useParams();
   const {
     text, setText,
     textAlign, setTextAlign,
@@ -643,100 +642,6 @@ export function CalculatorPanel({ calcState }: { calcState: UseNeonCalculatorRet
 
 // ─── Subcomponents ───
 
-function SectionWrapper({
-  number,
-  title,
-  subtitle,
-  expanded,
-  onToggle,
-  children,
-}: {
-  number: number;
-  title: string;
-  subtitle?: string;
-  expanded: boolean;
-  onToggle: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="px-4 lg:px-5">
-      <button
-        onClick={onToggle}
-        className="w-full flex items-center justify-between py-3.5"
-      >
-        <div className="flex items-center gap-2.5">
-          <span className="w-6 h-6 bg-slate-800 text-white text-xs font-bold rounded-md flex items-center justify-center shrink-0">
-            {number}
-          </span>
-          <div className="text-left">
-            <span className="text-sm font-bold text-slate-800 uppercase tracking-wide">{title}</span>
-            {subtitle && (
-              <p className="text-[11px] text-slate-400 font-normal">{subtitle}</p>
-            )}
-          </div>
-        </div>
-        {expanded ? (
-          <ChevronUp className="w-4 h-4 text-slate-400" />
-        ) : (
-          <ChevronDown className="w-4 h-4 text-slate-400" />
-        )}
-      </button>
-      {expanded && (
-        <div className="pb-4">
-          {children}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function EffectRadio({
-  selected,
-  onClick,
-  title,
-  description,
-  badge,
-}: {
-  selected: boolean;
-  onClick: () => void;
-  title: string;
-  description: string;
-  badge?: string;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={`w-full flex items-start gap-3 px-3 py-3 rounded-xl border text-left transition-all ${
-        selected
-          ? 'border-neon-pink bg-neon-pink/5'
-          : 'border-slate-200 hover:border-slate-300'
-      }`}
-    >
-      <div className={`w-5 h-5 mt-0.5 rounded-full border-2 flex items-center justify-center shrink-0 ${
-        selected ? 'border-neon-pink' : 'border-slate-300'
-      }`}>
-        {selected && <div className="w-2.5 h-2.5 bg-neon-pink rounded-full" />}
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2">
-          <span className={`text-sm font-medium ${selected ? 'text-neon-pink' : 'text-slate-700'}`}>
-            {title}
-          </span>
-          {badge && (
-            <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-md ${
-              badge === 'Free'
-                ? 'bg-green-100 text-green-700'
-                : 'bg-neon-pink/10 text-neon-pink'
-            }`}>
-              {badge}
-            </span>
-          )}
-        </div>
-        <p className="text-[11px] text-slate-400 mt-0.5">{description}</p>
-      </div>
-    </button>
-  );
-}
 
 function ToggleCard({
   active,
