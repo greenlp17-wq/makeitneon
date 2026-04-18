@@ -16,22 +16,27 @@ type SortOption = 'popular' | 'price-asc' | 'price-desc' | 'new';
 const SORT_LABELS: Record<SortOption, {
   en: string;
   de: string;
+  uk: string;
 }> = {
   'popular': {
     en: 'Popular',
-    de: 'Beliebt'
+    de: 'Beliebt',
+    uk: 'Популярні'
   },
   'price-asc': {
     en: 'Price: Low → High',
-    de: 'Preis: Niedrig → Hoch'
+    de: 'Preis: Niedrig → Hoch',
+    uk: 'Ціна: ↑'
   },
   'price-desc': {
     en: 'Price: High → Low',
-    de: 'Preis: Hoch → Niedrig'
+    de: 'Preis: Hoch → Niedrig',
+    uk: 'Ціна: ↓'
   },
   'new': {
     en: 'Newest',
-    de: 'Neueste'
+    de: 'Neueste',
+    uk: 'Новинки'
   }
 };
 export default function ShopPage() {

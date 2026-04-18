@@ -18,6 +18,13 @@ export default function BlogPostPage() {
   const currentLang = lang || 'en';
   const isDE = i18n.language === 'de';
   const isUK = i18n.language === 'uk';
+  const categoryLabels: Record<string, { de: string; uk: string }> = {
+    'Business': { de: 'Business', uk: 'Бізнес' },
+    'Behind the Scenes': { de: 'Hinter den Kulissen', uk: 'За лаштунками' },
+    'Inspiration': { de: 'Inspiration', uk: 'Натхнення' },
+    'Guide': { de: 'Ratgeber', uk: 'Гід' },
+  };
+  const getCategoryLabel = (cat: string) => isUK ? categoryLabels[cat]?.uk || cat : isDE ? categoryLabels[cat]?.de || cat : cat;
   const article = getArticleBySlug(slug || '');
   const related = article ? getRelatedArticles(article) : [];
   useEffect(() => {
@@ -114,7 +121,7 @@ export default function BlogPostPage() {
             {/* Category */}
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-violet/10 text-neon-violet text-xs font-semibold mb-4">
               <BookOpen className="w-3 h-3" />
-              {article.category}
+              {getCategoryLabel(article.category)}
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-5 leading-tight">

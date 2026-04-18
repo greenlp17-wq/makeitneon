@@ -20,6 +20,7 @@ export function CartSidebar() {
   const { lang } = useParams();
   const currentLang = lang || 'en';
   const isDE = i18n.language === 'de';
+  const isUK = i18n.language === 'uk';
   const { items, isOpen, closeCart, removeFromCart, updateQuantity, totalItems, totalPrice, clearCart } = useCart();
 
   // Checkout flow state
@@ -43,13 +44,13 @@ export function CartSidebar() {
   const validateForm = () => {
     const errors: Record<string, string> = {};
     if (!formData.name.trim() || formData.name.length < 2) {
-      errors.name = isDE ? 'Name erforderlich' : 'Name required';
+      errors.name = isUK ? "Ім'я обов'язкове" : isDE ? 'Name erforderlich' : 'Name required';
     }
     if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      errors.email = isDE ? 'Gültige E-Mail erforderlich' : 'Valid email required';
+      errors.email = isUK ? 'Введіть дійсний email' : isDE ? 'Gültige E-Mail erforderlich' : 'Valid email required';
     }
     if (!formData.phone.trim() || formData.phone.length < 7) {
-      errors.phone = isDE ? 'Telefonnummer erforderlich' : 'Phone number required';
+      errors.phone = isUK ? 'Телефон обов\'язковий' : isDE ? 'Telefonnummer erforderlich' : 'Phone number required';
     }
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -62,7 +63,7 @@ export function CartSidebar() {
     try {
       // Build order summary
       const orderItems = items.map(item => {
-        const name = isDE ? item.product.name_de : item.product.name_en;
+        const name = isUK ? item.product.name_uk || item.product.name_en : isDE ? item.product.name_de : item.product.name_en;
         const size = item.product.availableSizes.find(s => s.id === item.selectedSizeId);
         const colorName = getColorName(item.selectedColorId);
         const price = getItemPrice(item);
@@ -82,7 +83,7 @@ export function CartSidebar() {
       setStep('success');
     } catch (e) {
       console.error(e);
-      alert(isDE ? 'Fehler beim Senden. Bitte versuchen Sie es erneut.' : 'Failed to send. Please try again.');
+      alert(isUK ? 'Помилка відправки. Спробуйте ще раз.' : isDE ? 'Fehler beim Senden. Bitte versuchen Sie es erneut.' : 'Failed to send. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -114,13 +115,13 @@ export function CartSidebar() {
           <SheetTitle className="font-heading text-xl flex items-center gap-2">
             <ShoppingBag className="w-5 h-5" />
             {step === 'form'
-              ? (isDE ? 'Bestellung abschließen' : 'Complete Order')
+              ? (isUK ? 'Оформлення замовлення' : isDE ? 'Bestellung abschließen' : 'Complete Order')
               : step === 'success'
-              ? (isDE ? 'Bestätigung' : 'Confirmation')
-              : (isDE ? 'Warenkorb' : 'Cart')}
+              ? (isUK ? 'Підтвердження' : isDE ? 'Bestätigung' : 'Confirmation')
+              : (isUK ? 'Кошик' : isDE ? 'Warenkorb' : 'Cart')}
             {step === 'cart' && totalItems > 0 && (
               <span className="text-sm font-normal text-muted-foreground">
-                ({totalItems} {totalItems === 1 ? (isDE ? 'Artikel' : 'item') : (isDE ? 'Artikel' : 'items')})
+                ({totalItems} {totalItems === 1 ? (isUK ? 'товар' : isDE ? 'Artikel' : 'item') : (isUK ? 'товарів' : isDE ? 'Artikel' : 'items')})
               </span>
             )}
           </SheetTitle>
@@ -134,10 +135,12 @@ export function CartSidebar() {
             </div>
             <div>
               <h3 className="text-xl font-heading font-bold mb-2">
-                {isDE ? 'Vielen Dank!' : 'Thank You!'}
+                {isUK ? 'Дякуємо!' : isDE ? 'Vielen Dank!' : 'Thank You!'}
               </h3>
               <p className="text-sm text-muted-foreground max-w-[280px] mx-auto leading-relaxed">
-                {isDE
+                {isUK
+                  ? 'Ваше замовлення надіслано. Ми зв\'яжемося з вами протягом 24 годин.'
+                  : isDE
                   ? 'Ihre Bestellung wurde erfolgreich gesendet. Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.'
                   : 'Your order has been submitted successfully. We will contact you within 24 hours to confirm details.'}
               </p>
@@ -146,7 +149,7 @@ export function CartSidebar() {
               onClick={handleReset}
               className="bg-neon-pink hover:bg-neon-pink/90 text-white font-heading text-sm"
             >
-              {isDE ? 'Fertig' : 'Done'}
+              {isUK ? 'Готово' : isDE ? 'Fertig' : 'Done'}
             </Button>
           </div>
         ) : items.length === 0 ? (
@@ -157,10 +160,12 @@ export function CartSidebar() {
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2">
-                {isDE ? 'Ihr Warenkorb ist leer' : 'Your cart is empty'}
+                {isUK ? 'Ваш кошик порожній' : isDE ? 'Ihr Warenkorb ist leer' : 'Your cart is empty'}
               </h3>
               <p className="text-sm text-muted-foreground max-w-[240px] mx-auto">
-                {isDE
+                {isUK
+                  ? 'Відкрийте для себе нашу колекцію неонових вивісок.'
+                  : isDE
                   ? 'Entdecken Sie unsere Kollektion handgefertigter LED-Neonschilder.'
                   : 'Discover our collection of handcrafted LED neon signs.'}
               </p>
@@ -169,7 +174,7 @@ export function CartSidebar() {
               render={<Link to={`/${currentLang}/shop`} onClick={closeCart} />}
               className="bg-neon-pink hover:bg-neon-pink/90 text-white font-heading text-sm"
             >
-              {isDE ? 'Shop durchsuchen' : 'Browse Shop'}
+              {isUK ? 'В магазин' : isDE ? 'Shop durchsuchen' : 'Browse Shop'}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
@@ -180,10 +185,10 @@ export function CartSidebar() {
               {/* Order summary mini */}
               <div className="bg-muted/50 rounded-xl p-4">
                 <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
-                  {isDE ? 'Zusammenfassung' : 'Order Summary'}
+                  {isUK ? 'Підсумок замовлення' : isDE ? 'Zusammenfassung' : 'Order Summary'}
                 </p>
                 {items.map(item => {
-                  const name = isDE ? item.product.name_de : item.product.name_en;
+                  const name = isUK ? item.product.name_uk || item.product.name_en : isDE ? item.product.name_de : item.product.name_en;
                   return (
                     <div key={item.cartId} className="flex justify-between text-sm py-0.5">
                       <span className="text-foreground">{item.quantity}× {name}</span>
@@ -192,7 +197,7 @@ export function CartSidebar() {
                   );
                 })}
                 <div className="border-t border-border mt-2 pt-2 flex justify-between text-base font-bold">
-                  <span>{isDE ? 'Gesamt' : 'Total'}</span>
+                  <span>{isUK ? 'Всього' : isDE ? 'Gesamt' : 'Total'}</span>
                   <span>{totalPrice} CHF</span>
                 </div>
               </div>
@@ -200,7 +205,9 @@ export function CartSidebar() {
               {/* Contact form */}
               <div className="space-y-4">
                 <p className="text-sm text-muted-foreground">
-                  {isDE
+                  {isUK
+                    ? 'Введіть ваші контактні дані. Ми підтвердимо замовлення по email.'
+                    : isDE
                     ? 'Bitte geben Sie Ihre Kontaktdaten ein. Wir bestätigen Ihre Bestellung per E-Mail.'
                     : 'Enter your contact details. We\'ll confirm your order by email.'}
                 </p>
@@ -208,13 +215,13 @@ export function CartSidebar() {
                 <div>
                   <label className="text-sm font-medium mb-1.5 block" htmlFor="order-name">
                     <User className="w-3.5 h-3.5 inline mr-1.5" />
-                    {isDE ? 'Name' : 'Full Name'} <span className="text-neon-pink">*</span>
+                    {isUK ? 'Повне ім\'я' : isDE ? 'Name' : 'Full Name'} <span className="text-neon-pink">*</span>
                   </label>
                   <Input
                     id="order-name"
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
-                    placeholder={isDE ? 'Max Mustermann' : 'John Doe'}
+                    placeholder={isUK ? 'Іван Франко' : isDE ? 'Max Mustermann' : 'John Doe'}
                     className="h-10 rounded-lg"
                   />
                   {formErrors.name && <p className="text-destructive text-xs mt-1">{formErrors.name}</p>}
@@ -223,7 +230,7 @@ export function CartSidebar() {
                 <div>
                   <label className="text-sm font-medium mb-1.5 block" htmlFor="order-email">
                     <Mail className="w-3.5 h-3.5 inline mr-1.5" />
-                    {isDE ? 'E-Mail' : 'Email'} <span className="text-neon-pink">*</span>
+                    {isUK ? 'Email' : isDE ? 'E-Mail' : 'Email'} <span className="text-neon-pink">*</span>
                   </label>
                   <Input
                     id="order-email"
@@ -239,7 +246,7 @@ export function CartSidebar() {
                 <div>
                   <label className="text-sm font-medium mb-1.5 block" htmlFor="order-phone">
                     <Phone className="w-3.5 h-3.5 inline mr-1.5" />
-                    {isDE ? 'Telefon' : 'Phone'} <span className="text-neon-pink">*</span>
+                    {isUK ? 'Телефон' : isDE ? 'Telefon' : 'Phone'} <span className="text-neon-pink">*</span>
                   </label>
                   <Input
                     id="order-phone"
@@ -254,14 +261,16 @@ export function CartSidebar() {
 
                 <div>
                   <label className="text-sm font-medium mb-1.5 block" htmlFor="order-message">
-                    {isDE ? 'Nachricht (optional)' : 'Message (optional)'}
+                    {isUK ? 'Повідомлення (необов\'язково)' : isDE ? 'Nachricht (optional)' : 'Message (optional)'}
                   </label>
                   <textarea
                     id="order-message"
                     rows={3}
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
-                    placeholder={isDE
+                    placeholder={isUK
+                      ? 'Побажання або запитання...'
+                      : isDE
                       ? 'Besondere Wünsche oder Fragen...'
                       : 'Any special requests or questions...'}
                     className="w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm
@@ -285,12 +294,12 @@ export function CartSidebar() {
                 {isSubmitting ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin mr-2" />
-                    {isDE ? 'Wird gesendet...' : 'Sending...'}
+                    {isUK ? 'Відправка...' : isDE ? 'Wird gesendet...' : 'Sending...'}
                   </>
                 ) : (
                   <>
                     <Send className="w-4 h-4 mr-2" />
-                    {isDE ? 'Bestellung absenden' : 'Submit Order'}
+                    {isUK ? 'Відправити замовлення' : isDE ? 'Bestellung absenden' : 'Submit Order'}
                   </>
                 )}
               </Button>
@@ -298,7 +307,7 @@ export function CartSidebar() {
                 className="w-full text-xs text-muted-foreground hover:text-foreground transition-colors underline text-center"
                 onClick={() => setStep('cart')}
               >
-                {isDE ? '← Zurück zum Warenkorb' : '← Back to cart'}
+                {isUK ? '← Назад до кошика' : isDE ? '← Zurück zum Warenkorb' : '← Back to cart'}
               </button>
             </div>
           </>
@@ -308,7 +317,7 @@ export function CartSidebar() {
             {/* Cart items */}
             <div className="flex-1 overflow-y-auto px-4 sm:px-6 space-y-4 py-2">
               {items.map(item => {
-                const name = isDE ? item.product.name_de : item.product.name_en;
+                const name = isUK ? item.product.name_uk || item.product.name_en : isDE ? item.product.name_de : item.product.name_en;
                 const size = item.product.availableSizes.find(s => s.id === item.selectedSizeId);
                 const color = neonColors.find(c => c.id === item.selectedColorId);
                 const itemPrice = getItemPrice(item);
@@ -392,12 +401,14 @@ export function CartSidebar() {
             {/* Footer / Total */}
             <div className="pt-4 pb-6 px-4 sm:px-6 space-y-4 border-t border-border shrink-0">
               <div className="flex items-center justify-between">
-                <span className="text-base font-medium">{isDE ? 'Gesamt' : 'Total'}</span>
+                <span className="text-base font-medium">{isUK ? 'Всього' : isDE ? 'Gesamt' : 'Total'}</span>
                 <span className="text-xl font-heading font-bold">{totalPrice} CHF</span>
               </div>
 
               <p className="text-xs text-muted-foreground text-center">
-                {isDE
+                {isUK
+                  ? 'Ручна робота в Цюриху • 2 роки гарантії'
+                  : isDE
                   ? 'Handgefertigt in Zürich • 2 Jahre Garantie'
                   : 'Handcrafted in Zurich • 2 year warranty'}
               </p>
@@ -409,7 +420,7 @@ export function CartSidebar() {
                            transition-all duration-300"
                 id="cart-request-order"
               >
-                {isDE ? 'Bestellung anfragen' : 'Request Order'}
+                {isUK ? 'Оформити замовлення' : isDE ? 'Bestellung anfragen' : 'Request Order'}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
 
@@ -418,13 +429,13 @@ export function CartSidebar() {
                   className="text-xs text-muted-foreground hover:text-destructive transition-colors underline"
                   onClick={clearCart}
                 >
-                  {isDE ? 'Warenkorb leeren' : 'Clear cart'}
+                  {isUK ? 'Очистити кошик' : isDE ? 'Warenkorb leeren' : 'Clear cart'}
                 </button>
                 <button
                   className="text-xs text-muted-foreground hover:text-foreground transition-colors underline"
                   onClick={closeCart}
                 >
-                  {isDE ? 'Weiter einkaufen' : 'Continue shopping'}
+                  {isUK ? 'Продовжити покупки' : isDE ? 'Weiter einkaufen' : 'Continue shopping'}
                 </button>
               </div>
             </div>

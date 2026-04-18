@@ -9,6 +9,7 @@ export function CTABannerSection() {
   const { lang } = useParams();
   const currentLang = lang || 'en';
   const isDE = i18n.language === 'de';
+  const isUK = i18n.language === 'uk';
 
   return (
     <section className="py-16 sm:py-20 bg-calc-bg relative overflow-hidden" id="cta-banner">
@@ -20,17 +21,21 @@ export function CTABannerSection() {
         <ScrollReveal direction="up" className="text-center max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-pink/10 text-neon-pink text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
-            {isDE ? 'Kostenloses Design-Mockup' : 'Free Design Mockup'}
+            {isUK ? 'Безкоштовний макет дизайну' : isDE ? 'Kostenloses Design-Mockup' : 'Free Design Mockup'}
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white mb-4 leading-tight">
-            {isDE
+            {isUK
+              ? 'Готові до своєї неонової вивіски?'
+              : isDE
               ? 'Bereit für Ihr eigenes Neonschild?'
               : 'Ready for Your Own Neon Sign?'}
           </h2>
 
           <p className="text-lg text-white/50 mb-8 max-w-xl mx-auto">
-            {isDE
+            {isUK
+              ? 'Створіть свою LED вивіску та отримайте безкоштовний макет протягом 24 годин. Без зобов\'язань.'
+              : isDE
               ? 'Gestalten Sie Ihr individuelles LED-Neonschild und erhalten Sie innerhalb von 24 Stunden ein kostenloses Foto-Mockup.'
               : 'Design your custom LED neon sign and get a free photo mockup within 24 hours. No commitment required.'}
           </p>
@@ -45,7 +50,7 @@ export function CTABannerSection() {
               id="cta-banner-primary"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              {isDE ? 'Jetzt gestalten' : 'Design Your Sign'}
+              {isUK ? 'Створити вивіску' : isDE ? 'Jetzt gestalten' : 'Design Your Sign'}
             </Button>
 
             <Button
@@ -56,16 +61,16 @@ export function CTABannerSection() {
                          h-13 px-8 rounded-xl backdrop-blur-sm hover:border-white/40 transition-all duration-300"
               id="cta-banner-secondary"
             >
-              {isDE ? 'Kollektion ansehen' : 'Browse Collection'}
+              {isUK ? 'Переглянути колекцію' : isDE ? 'Kollektion ansehen' : 'Browse Collection'}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
 
           {/* Trust line */}
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-white/30 text-xs font-medium">
-            <span>✓ {isDE ? 'Kostenloses Mockup' : 'Free design mockup'}</span>
-            <span>✓ {isDE ? '2 Jahre Garantie' : '2 year warranty'}</span>
-            <span>✓ {isDE ? 'Antwort in 24h' : 'Response within 24h'}</span>
+            <span>✓ {isUK ? 'Безкоштовний макет' : isDE ? 'Kostenloses Mockup' : 'Free design mockup'}</span>
+            <span>✓ {isUK ? '2 роки гарантії' : isDE ? '2 Jahre Garantie' : '2 year warranty'}</span>
+            <span>✓ {isUK ? 'Відповідь за 24г' : isDE ? 'Antwort in 24h' : 'Response within 24h'}</span>
           </div>
         </ScrollReveal>
       </div>

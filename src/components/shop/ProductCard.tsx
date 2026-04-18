@@ -19,8 +19,9 @@ export function ProductCard({ product }: ProductCardProps) {
   const { i18n } = useTranslation();
   const currentLang = lang || 'en';
   const isDE = i18n.language === 'de';
+  const isUK = i18n.language === 'uk';
 
-  const name = isDE ? product.name_de : product.name_en;
+  const name = isUK ? product.name_uk || product.name_en : isDE ? product.name_de : product.name_en;
   const fromPrice = Math.min(...product.availableSizes.map(s => s.price));
   const font = neonFonts.find(f => f.id === product.defaultFontId);
   const color = neonColors.find(c => c.id === product.defaultColorId);
@@ -88,13 +89,13 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.bestSeller && (
               <Badge className="bg-neon-warm text-black text-[10px] font-bold uppercase tracking-wider 
                                 border-none shadow-md">
-                Best Seller
+                {isUK ? 'Хіт' : 'Best Seller'}
               </Badge>
             )}
             {product.isNew && (
               <Badge className="bg-neon-green text-black text-[10px] font-bold uppercase tracking-wider 
                                 border-none shadow-md">
-                New
+                {isUK ? 'Новинка' : 'New'}
               </Badge>
             )}
           </div>
@@ -114,11 +115,11 @@ export function ProductCard({ product }: ProductCardProps) {
 
           <div className="flex items-center justify-between">
             <p className="text-sm text-muted-foreground">
-              from <span className="text-foreground font-semibold">{fromPrice} CHF</span>
+              {isUK ? 'від' : isDE ? 'ab' : 'from'} <span className="text-foreground font-semibold">{fromPrice} CHF</span>
             </p>
             <span className="text-xs font-medium text-neon-pink opacity-0 group-hover:opacity-100 
                              transition-opacity duration-300">
-              View →
+              {isUK ? 'Дивитись →' : isDE ? 'Ansehen →' : 'View →'}
             </span>
           </div>
 

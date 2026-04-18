@@ -11,6 +11,7 @@ import { siteConfig } from '@/config/site';
 export function WhatsAppButton() {
   const { i18n } = useTranslation();
   const isDE = i18n.language === 'de';
+  const isUK = i18n.language === 'uk';
   const [visible, setVisible] = useState(true);
 
   // Hide while actively scrolling, show after 800ms pause
@@ -33,7 +34,9 @@ export function WhatsAppButton() {
     };
   }, [handleScroll]);
 
-  const prefillText = isDE
+  const prefillText = isUK
+    ? 'Вітаю! Мене цікавить кастомна неонова вивіска. Розкажіть більше?'
+    : isDE
     ? 'Hallo! Ich interessiere mich für ein individuelles Neonschild. Können Sie mir mehr erzählen?'
     : siteConfig.whatsapp.defaultMessage;
 

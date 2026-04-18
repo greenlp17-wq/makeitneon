@@ -40,27 +40,47 @@ export default function RentalPage() {
     key: RentalCategory;
     label: string;
     label_de: string;
+    label_uk: string;
   }[] = [{
     key: 'all',
     label: 'All Signs',
-    label_de: 'Alle Schilder'
+    label_de: 'Alle Schilder',
+    label_uk: 'Всі вивіски'
   }, {
     key: 'wedding',
     label: 'Wedding',
-    label_de: 'Hochzeit'
+    label_de: 'Hochzeit',
+    label_uk: 'Весілля'
   }, {
     key: 'birthday',
     label: 'Birthday & Events',
-    label_de: 'Geburtstag & Events'
+    label_de: 'Geburtstag & Events',
+    label_uk: 'Дні народження та події'
   }, {
     key: 'business',
     label: 'Business',
-    label_de: 'Business'
+    label_de: 'Business',
+    label_uk: 'Бізнес'
   }];
   const filteredSigns = activeCategory === 'all' ? rentalSigns : rentalSigns.filter(s => s.category === activeCategory);
 
   // FAQ data
-  const faqs = isDE ? [{
+  const faqs = isUK ? [{
+    q: 'На який термін можна орендувати вивіску?',
+    a: 'Стандарт — вихідні (пт–пн). Тижнева оренда також можлива — зв\'яжіться для спеціальної ціни.'
+  }, {
+    q: 'Що буде, якщо вивіска пошкодиться?',
+    a: 'Незначне зношення покривається заставою. При значних пошкодженнях застава може бути утримана частково або повністю.'
+  }, {
+    q: 'Чи можна отримати вивіску поштою?',
+    a: 'Так! Ми відправляємо у спеціальній упаковці. Ви отримаєте вивіску за 3-5 днів до події. Повернення у тому ж коробці.'
+  }, {
+    q: 'Наскільки заздалегідь бронювати?',
+    a: 'Популярні вивіски бронюють швидко, особливо у весільний сезон (травень–вересень). Рекомендуємо бронювати за 2-4 тижні.'
+  }, {
+    q: 'Чи потрібна спеціальна розетка?',
+    a: 'Ні! Наші LED вивіски працюють від звичайної розетки 230V (CH/EU). Споживання: лише 5-15 ват.'
+  }] : isDE ? [{
     q: 'Wie lange kann ich ein Schild mieten?',
     a: 'Standard ist ein Wochenende (Fr–Mo). Wöchentliche Miete ist auch möglich — kontaktieren Sie uns für einen Spezialpreis.'
   }, {
@@ -113,7 +133,23 @@ export default function RentalPage() {
   };
 
   // Steps
-  const howSteps = isDE ? [{
+  const howSteps = isUK ? [{
+    icon: PartyPopper,
+    title: 'Оберіть вивіску',
+    desc: 'Перегляньте нашу колекцію та оберіть ідеальну неонову вивіску для вашої події.'
+  }, {
+    icon: CalendarCheck,
+    title: 'Забронюйте дату',
+    desc: 'Закріпіть дату з передоплатою 50% + поворотна застава.'
+  }, {
+    icon: Truck,
+    title: 'Насолоджуйтесь',
+    desc: 'Ми доставимо або відправимо вивіску вчасно. Підключіть і нехай подія сяє!'
+  }, {
+    icon: RotateCcw,
+    title: 'Поверніть',
+    desc: 'Після події пакуєте вивіску у оригінальну коробку. Застава повертається протягом 5 днів.'
+  }] : isDE ? [{
     icon: PartyPopper,
     title: 'Schild wählen',
     desc: 'Durchsuchen Sie unsere Kollektion und wählen Sie das perfekte Neonschild für Ihren Anlass.'

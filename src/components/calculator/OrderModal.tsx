@@ -20,7 +20,7 @@ export function OrderModal({ isOpen, onClose, calcState, mode }: OrderModalProps
 
   if (!isOpen) return null;
 
-  const { text, activeFont, activeColor, widthCm, isOutdoor, isRGB, hasDimmer, mountType, backboardColor, priceBreakdown, lineCount } = calcState;
+  const { text, activeFont, activeColor, widthCm, isOutdoor, isRGB, hasDimmer, mountType, backboardColor, backboardShape, priceBreakdown, lineCount } = calcState;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +43,8 @@ export function OrderModal({ isOpen, onClose, calcState, mode }: OrderModalProps
         rgb: isRGB ? 'Yes' : 'No',
         dimmer: hasDimmer ? 'Yes' : 'No',
         mount: mountType,
-        backboard: backboardColor,
+        backboardShape: backboardShape,
+        backboardColor: backboardColor,
         price: priceBreakdown?.totalPrice || 0,
         customerName: name,
         customerEmail: email,
@@ -142,6 +143,8 @@ export function OrderModal({ isOpen, onClose, calcState, mode }: OrderModalProps
             <div className="text-slate-800">{widthCm} cm wide</div>
             <div className="text-slate-500">Indoor/Outdoor:</div>
             <div className="text-slate-800">{isOutdoor ? 'Outdoor (IP65)' : 'Indoor'}</div>
+            <div className="text-slate-500">Backing:</div>
+            <div className="text-slate-800 capitalize">{backboardShape.replace(/-/g, ' ')} • {backboardColor.replace(/-/g, ' ')}</div>
             {isRGB && (
               <>
                 <div className="text-slate-500">Special:</div>

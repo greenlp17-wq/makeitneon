@@ -7,43 +7,53 @@ import { Button } from '@/components/ui/button';
 import { SEO, createBreadcrumbSchema } from '@/components/seo/SEO';
 
 const STATS = [
-  { value: '500+', label: 'Signs Delivered' },
-  { value: '120+', label: 'Happy Clients' },
-  { value: '4.9★', label: 'Average Rating' },
-  { value: '2yr', label: 'Full Warranty' },
+  { value: '500+', label_en: 'Signs Delivered', label_de: 'Schilder geliefert', label_uk: 'Вивісок зроблено' },
+  { value: '120+', label_en: 'Happy Clients', label_de: 'Zufriedene Kunden', label_uk: 'Задоволених клієнтів' },
+  { value: '4.9★', label_en: 'Average Rating', label_de: 'Bewertung', label_uk: 'Середній рейтинг' },
+  { value: '2yr', label_en: 'Full Warranty', label_de: 'Volle Garantie', label_uk: 'Повна гарантія' },
 ];
 
 const VALUES = [
   {
     icon: Heart,
-    title: 'Passion for Craft',
-    desc: 'Every sign is made with love and attention to detail by our skilled artisans.',
+    title_en: 'Passion for Craft', title_de: 'Leidenschaft', title_uk: 'Пристрасть до справи',
+    desc_en: 'Every sign is made with love and attention to detail by our skilled artisans.',
+    desc_de: 'Jedes Schild wird mit Liebe und Liebe zum Detail von unseren Handwerkern gefertigt.',
+    desc_uk: 'Кожна вивіска зроблена з любов\'ю та увагою до деталей нашими майстрами.',
     color: 'neon-pink',
   },
   {
     icon: Award,
-    title: 'Premium Quality',
-    desc: 'We use only the highest quality LED neon flex and precision-cut Swiss acrylic.',
+    title_en: 'Premium Quality', title_de: 'Premium-Qualität', title_uk: 'Преміум якість',
+    desc_en: 'We use only the highest quality LED neon flex and precision-cut Swiss acrylic.',
+    desc_de: 'Wir verwenden nur hochwertigsten LED Neon Flex und präzisionsgeschnittenes Schweizer Acryl.',
+    desc_uk: 'Ми використовуємо тільки найякісніший LED неон та швейцарський акріл.',
     color: 'neon-blue',
   },
   {
     icon: Globe,
-    title: 'Local & Global',
-    desc: 'Based in Zurich, serving the world. Installation services across Switzerland.',
+    title_en: 'Local & Global', title_de: 'Lokal & Global', title_uk: 'Локально та глобально',
+    desc_en: 'Based in Zurich, serving the world. Installation services across Switzerland.',
+    desc_de: 'Aus Zürich, für die ganze Welt. Montageservice in der ganzen Schweiz.',
+    desc_uk: 'Базуємось у Цюриху, працюємо по всьому світу. Монтаж по Швейцарії.',
     color: 'neon-green',
   },
   {
     icon: Zap,
-    title: 'Eco-Friendly',
-    desc: '80% less energy than glass neon, zero hazardous gases, cool to the touch.',
+    title_en: 'Eco-Friendly', title_de: 'Umweltfreundlich', title_uk: 'Екологічність',
+    desc_en: '80% less energy than glass neon, zero hazardous gases, cool to the touch.',
+    desc_de: '80% weniger Energie als Glasneon, keine Schadstoffe, kühl bei Berührung.',
+    desc_uk: 'На 80% менше енергії ніж скляний неон, без шкідливих газів, не нагрівається.',
     color: 'neon-warm',
   },
 ];
 
 export default function AboutPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { lang } = useParams();
   const currentLang = lang || 'en';
+  const isDE = i18n.language === 'de';
+  const isUK = i18n.language === 'uk';
 
   return (
     <>
@@ -64,11 +74,12 @@ export default function AboutPage() {
             {t('nav.about')}
           </div>
           <h1 className="mb-6">
-            About <span className="gradient-neon-text">Make It Neon</span>
+            {isUK ? <>Про <span className="gradient-neon-text">Make It Neon</span></> : isDE ? <>Über <span className="gradient-neon-text">Make It Neon</span></> : <>About <span className="gradient-neon-text">Make It Neon</span></>}
           </h1>
           <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-            We're a team of passionate artisans based in Zurich, Switzerland, dedicated to creating stunning LED neon signs that bring
-            spaces to life. From cozy cafés to grand wedding venues, our handcrafted signs illuminate moments that matter.
+            {isUK ? 'Ми — команда пристрасних майстрів з Цюриха, Швейцарія, які створюють вражаючі LED неонові вивіски, що оживляють простір. Від затишних кафе до розкішних весільних залів — наші вивіски ручної роботи освітлюють моменти, що мають значення.'
+            : isDE ? 'Wir sind ein Team leidenschaftlicher Handwerker aus Zürich, Schweiz, die atemberaubende LED-Neonschilder fertigen, die Räume zum Leben erwecken.'
+            : "We're a team of passionate artisans based in Zurich, Switzerland, dedicated to creating stunning LED neon signs that bring spaces to life. From cozy cafés to grand wedding venues, our handcrafted signs illuminate moments that matter."}
           </p>
         </ScrollReveal>
 
@@ -80,7 +91,7 @@ export default function AboutPage() {
                 <div className="font-heading text-3xl font-bold gradient-neon-text mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">{isUK ? stat.label_uk : isDE ? stat.label_de : stat.label_en}</div>
               </div>
             ))}
           </div>
@@ -100,30 +111,33 @@ export default function AboutPage() {
                 className="relative font-heading text-4xl sm:text-5xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent"
                 style={{ textShadow: '0 0 30px rgba(255,255,255,0.15)' }}
               >
-                Our Workshop
+                {isUK ? 'Наша Майстерня' : isDE ? 'Unsere Werkstatt' : 'Our Workshop'}
               </span>
             </div>
           </ScrollReveal>
           <ScrollReveal direction="right">
-            <h2 className="mb-4">Our Story</h2>
+            <h2 className="mb-4">{isUK ? 'Наша Історія' : isDE ? 'Unsere Geschichte' : 'Our Story'}</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Founded in 2022, Make It Neon was born from a simple idea: to make premium LED neon signs accessible to everyone.
-              What started as a passion project in a small Zurich workshop has grown into Switzerland's go-to destination for custom neon.
+              {isUK ? 'Заснований у 2022 році, Make It Neon народився з простої ідеї: зробити преміальні LED неонові вивіски доступними для кожного. Те, що починалося як хобі-проєкт у маленькій цюрихській майстерні, виросло у провідне місце в Швейцарії для кастомного неону.'
+              : isDE ? 'Make It Neon wurde 2022 gegründet — aus der einfachen Idee, Premium LED-Neonschilder für jeden zugänglich zu machen.'
+              : "Founded in 2022, Make It Neon was born from a simple idea: to make premium LED neon signs accessible to everyone. What started as a passion project in a small Zurich workshop has grown into Switzerland's go-to destination for custom neon."}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We combine traditional sign-making craftsmanship with cutting-edge LED technology. Each sign is hand-bent, quality-tested,
-              and carefully packaged right here in Zurich — ensuring every piece meets our high standards.
+              {isUK ? 'Ми поєднуємо традиційну майстерність із сучасними LED технологіями. Кожна вивіска згинається вручну, перевіряється на якість і ретельно пакується прямо тут, у Цюриху.'
+              : isDE ? 'Wir verbinden traditionelles Handwerk mit modernster LED-Technologie. Jedes Schild wird von Hand gebogen und hier in Zürich verpackt.'
+              : 'We combine traditional sign-making craftsmanship with cutting-edge LED technology. Each sign is hand-bent, quality-tested, and carefully packaged right here in Zurich — ensuring every piece meets our high standards.'}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Whether it's a bold business sign, a romantic wedding backdrop, or a personal touch for your home — we pour heart and
-              soul into every creation.
+              {isUK ? 'Будь то яскрава вивіска для бізнесу, романтичний весільний декор або особистий штрих для вашого дому — ми вкладаємо душу у кожну роботу.'
+              : isDE ? 'Ob ein kühnes Geschäftsschild, ein romantischer Hochzeitshintergrund oder eine persönliche Note für Ihr Zuhause — wir stecken Herz und Seele in jede Kreation.'
+              : "Whether it's a bold business sign, a romantic wedding backdrop, or a personal touch for your home — we pour heart and soul into every creation."}
             </p>
           </ScrollReveal>
         </div>
 
         {/* Values */}
         <ScrollReveal direction="up" className="text-center mb-10">
-          <h2 className="mb-4">What We Stand For</h2>
+          <h2 className="mb-4">{isUK ? 'Наші Цінності' : isDE ? 'Wofür wir stehen' : 'What We Stand For'}</h2>
         </ScrollReveal>
 
         <StaggerGroup
@@ -142,8 +156,8 @@ export default function AboutPage() {
                 group-hover:scale-110 transition-transform duration-300`}>
                 <value.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold font-heading">{value.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{value.desc}</p>
+              <h3 className="text-xl font-bold font-heading">{isUK ? value.title_uk : isDE ? value.title_de : value.title_en}</h3>
+              <p className="text-muted-foreground leading-relaxed">{isUK ? value.desc_uk : isDE ? value.desc_de : value.desc_en}</p>
             </div>
           ))}
         </StaggerGroup>
@@ -151,9 +165,13 @@ export default function AboutPage() {
         {/* CTA */}
         <ScrollReveal className="text-center">
           <div className="glass p-10 rounded-3xl border border-border/50">
-            <h3 className="text-2xl font-heading font-bold mb-4">Ready to Create Something Special?</h3>
+            <h3 className="text-2xl font-heading font-bold mb-4">
+              {isUK ? 'Готові створити щось особливе?' : isDE ? 'Bereit, etwas Besonderes zu schaffen?' : 'Ready to Create Something Special?'}
+            </h3>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Design your own custom LED neon sign with our online configurator, or reach out for a free quote on custom projects.
+              {isUK ? 'Створіть свою кастомну LED вивіску з нашим калькулятором або зверніться до нас для безкоштовного прорахунку.'
+              : isDE ? 'Gestalten Sie Ihr eigenes Neonschild mit unserem Konfigurator oder kontaktieren Sie uns für ein kostenloses Angebot.'
+              : 'Design your own custom LED neon sign with our online configurator, or reach out for a free quote on custom projects.'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button
@@ -163,7 +181,7 @@ export default function AboutPage() {
                            shadow-[0_0_20px_rgba(255,45,120,0.3)] hover:shadow-[0_0_32px_rgba(255,45,120,0.5)]
                            transition-all duration-300 group"
               >
-                Design Your Sign
+                {isUK ? 'Створити вивіску' : isDE ? 'Schild gestalten' : 'Design Your Sign'}
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -172,7 +190,7 @@ export default function AboutPage() {
                 size="lg"
                 className="font-heading text-sm font-semibold"
               >
-                Contact Us
+                {isUK ? 'Зв\'язатись з нами' : isDE ? 'Kontaktieren' : 'Contact Us'}
               </Button>
             </div>
           </div>

@@ -152,7 +152,7 @@ export default function ContactPage() {
       setIsSuccess(true);
     } catch (e) {
       console.error(e);
-      alert('Failed to send message. Please try again.');
+      alert(isUK ? 'Помилка відправки. Спробуйте ще раз.' : isDE ? 'Fehler beim Senden. Bitte versuchen Sie es erneut.' : 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

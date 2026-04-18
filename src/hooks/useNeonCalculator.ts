@@ -12,8 +12,10 @@ import {
   ADDON_DIMMER_COST,
   MOUNT_OPTIONS,
   BACKBOARD_COLORS,
+  BACKBOARD_SHAPES,
   type MountType,
   type BackboardColor,
+  type BackboardShape,
 } from '../data/pricing';
 
 // ─── Types ───
@@ -22,10 +24,11 @@ export type TextAlign = 'left' | 'center' | 'right';
 
 export interface PriceBreakdown {
   basePrice: number;           // BASE_COST + neonMeters*rate + laserMeters*rate
-  outdoorAddon: number;        // +40% if outdoor
+  outdoorAddon: number;        // +25% if outdoor
   rgbAddon: number;            // +50% if RGB
   dimmerAddon: number;         // fixed if selected
   mountAddon: number;          // fixed for hanging/stand
+  shapeAddon: number;          // fixed for cut-to-shape/cut-to-letter
   backboardAddon: number;      // fixed for colored backboard
   totalPrice: number;
 }
@@ -64,6 +67,8 @@ export interface UseNeonCalculatorReturn {
   setMountType: (t: MountType) => void;
   backboardColor: BackboardColor;
   setBackboardColor: (c: BackboardColor) => void;
+  backboardShape: BackboardShape;
+  setBackboardShape: (s: BackboardShape) => void;
 
   // Preview
   backgroundId: string;
@@ -101,9 +106,10 @@ export function useNeonCalculator(initialText: string = 'Make It Neon'): UseNeon
   // ─── Options ───
   const [isRGB, setIsRGB] = useState(false);
   const [isOutdoor, setIsOutdoor] = useState(false);
-  const [hasDimmer, setHasDimmer] = useState(false);
+  const [hasDimmer, setHasDimmer] = useState(true); // included free with every sign
   const [mountType, setMountType] = useState<MountType>('wall');
   const [backboardColor, setBackboardColor] = useState<BackboardColor>('clear');
+  const [backboardShape, setBackboardShape] = useState<BackboardShape>('rectangle');
 
   // ─── Preview ───
   const [backgroundId, setBackgroundId] = useState('dark-wall');
@@ -265,9 +271,10 @@ export function useNeonCalculator(initialText: string = 'Make It Neon'): UseNeon
     // Fixed addons
     const dimmerAddon = hasDimmer ? ADDON_DIMMER_COST : 0;
     const mountAddon = MOUNT_OPTIONS.find(m => m.id === mountType)?.cost || 0;
+    const shapeAddon = BACKBOARD_SHAPES.find(s => s.id === backboardShape)?.cost || 0;
     const backboardAddon = BACKBOARD_COLORS.find(b => b.id === backboardColor)?.cost || 0;
 
-    const totalPrice = basePrice + outdoorAddon + rgbAddon + dimmerAddon + mountAddon + backboardAddon;
+    const totalPrice = basePrice + outdoorAddon + rgbAddon + dimmerAddon + mountAddon + shapeAddon + backboardAddon;
 
     return {
       basePrice: Math.round(basePrice),
@@ -275,10 +282,11 @@ export function useNeonCalculator(initialText: string = 'Make It Neon'): UseNeon
       rgbAddon: Math.round(rgbAddon),
       dimmerAddon,
       mountAddon,
+      shapeAddon,
       backboardAddon,
       totalPrice: Math.round(totalPrice),
     };
-  }, [engineResult, isOutdoor, isRGB, hasDimmer, mountType, backboardColor]);
+  }, [engineResult, isOutdoor, isRGB, hasDimmer, mountType, backboardShape, backboardColor]);
 
   // ─── SVG Generation (for email, not for client download) ───
   const generateOrderSVG = useCallback((): string | null => {
@@ -315,6 +323,8 @@ export function useNeonCalculator(initialText: string = 'Make It Neon'): UseNeon
     setMountType,
     backboardColor,
     setBackboardColor,
+    backboardShape,
+    setBackboardShape,
 
     backgroundId,
     setBackgroundId,

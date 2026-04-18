@@ -10,11 +10,11 @@ export const BASE_COST = 60;              // CHF base cost per sign (electronics
 export const PADDING_CM = 3;              // cm — acrylic padding around text on each side
 
 // ─── Addon Multipliers (applied to base price) ───
-export const ADDON_OUTDOOR_MULTIPLIER = 1.40;   // +40% for IP65 waterproof coating
+export const ADDON_OUTDOOR_MULTIPLIER = 1.25;   // +25% for IP65 waterproof coating
 export const ADDON_RGB_MULTIPLIER = 1.50;        // +50% for RGB controller + LED strip
 
 // ─── Addon Fixed Costs ───
-export const ADDON_DIMMER_COST = 30;              // CHF — dimmer + remote control
+export const ADDON_DIMMER_COST = 0;               // CHF — dimmer + remote included FREE with every sign
 export const ADDON_HANGING_COST = 20;             // CHF — hanging wire kit
 export const ADDON_STAND_COST = 45;               // CHF — acrylic desk stand
 
@@ -23,7 +23,19 @@ export const ADDON_ARAKAL_COST = 30;              // CHF — vinyl color fill on
 export const ADDON_GLOSSY_BACKBOARD = 15;         // CHF — glossy white or black backboard
 export const ADDON_METALLIC_BACKBOARD = 25;       // CHF — gold or silver mirror backboard
 
-// ─── Backboard Style Config ───
+// ─── Backboard Shape Config ───
+export type BackboardShape = 'rectangle' | 'cut-to-shape' | 'cut-to-letter';
+
+export const ADDON_CUT_TO_SHAPE_COST = 15;     // CHF — contour-cut following text outline
+export const ADDON_CUT_TO_LETTER_COST = 35;    // CHF — individual letter backing (invisible mount)
+
+export const BACKBOARD_SHAPES: { id: BackboardShape; label: string; description: string; cost: number }[] = [
+  { id: 'rectangle',     label: 'Rectangle',     description: 'Standard rectangular backing',              cost: 0 },
+  { id: 'cut-to-shape',  label: 'Cut to Shape',   description: 'Contour follows your text outline',         cost: ADDON_CUT_TO_SHAPE_COST },
+  { id: 'cut-to-letter', label: 'Cut to Letter',  description: 'Individual backing per letter (invisible)',  cost: ADDON_CUT_TO_LETTER_COST },
+];
+
+// ─── Backboard Color Config ───
 export type BackboardStyle = 'cut-around' | 'rectangle';
 export type BackboardColor = 'clear' | 'glossy-white' | 'glossy-black' | 'gold-mirror' | 'silver-mirror' | 'arakal';
 

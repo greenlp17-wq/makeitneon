@@ -31,47 +31,59 @@ const PROJECT_TYPES = [{
   icon: Type,
   labelEN: 'Text Sign',
   labelDE: 'Textschild',
+  labelUK: 'Текстова вивіска',
   descEN: 'Custom text in your choice of font and color',
-  descDE: 'Benutzerdefinierter Text in Ihrer Wunschschrift und Farbe'
+  descDE: 'Benutzerdefinierter Text in Ihrer Wunschschrift und Farbe',
+  descUK: 'Ваш текст у вибраному шрифті та кольорі'
 }, {
   value: 'logo' as const,
   icon: ImageIcon,
   labelEN: 'Logo Sign',
   labelDE: 'Logo-Schild',
+  labelUK: 'Лого-вивіска',
   descEN: 'Your brand logo recreated in neon',
-  descDE: 'Ihr Markenlogo als Neonschild'
+  descDE: 'Ihr Markenlogo als Neonschild',
+  descUK: 'Ваш логотип у неоні'
 }, {
   value: 'custom' as const,
   icon: Shapes,
   labelEN: 'Custom Shape',
   labelDE: 'Individuelle Form',
+  labelUK: 'Індивідуальна форма',
   descEN: 'Unique shape, artwork or illustration',
-  descDE: 'Einzigartige Form, Artwork oder Illustration'
+  descDE: 'Einzigartige Form, Artwork oder Illustration',
+  descUK: 'Унікальна форма, арт або ілюстрація'
 }];
 const SIZES = [{
   value: '30-50',
   labelEN: 'Small (30-50 cm)',
-  labelDE: 'Klein (30-50 cm)'
+  labelDE: 'Klein (30-50 cm)',
+  labelUK: 'Малий (30-50 см)'
 }, {
   value: '50-80',
   labelEN: 'Medium (50-80 cm)',
-  labelDE: 'Mittel (50-80 cm)'
+  labelDE: 'Mittel (50-80 cm)',
+  labelUK: 'Середній (50-80 см)'
 }, {
   value: '80-120',
   labelEN: 'Large (80-120 cm)',
-  labelDE: 'Groß (80-120 cm)'
+  labelDE: 'Groß (80-120 cm)',
+  labelUK: 'Великий (80-120 см)'
 }, {
   value: '120-150',
   labelEN: 'Extra Large (120-150 cm)',
-  labelDE: 'Extra Groß (120-150 cm)'
+  labelDE: 'Extra Groß (120-150 cm)',
+  labelUK: 'Надвеликий (120-150 см)'
 }, {
   value: '150+',
   labelEN: 'Oversized (150+ cm)',
-  labelDE: 'Übergröße (150+ cm)'
+  labelDE: 'Übergröße (150+ cm)',
+  labelUK: 'Гігант (150+ см)'
 }, {
   value: 'unsure',
   labelEN: "I'm not sure",
-  labelDE: 'Ich bin nicht sicher'
+  labelDE: 'Ich bin nicht sicher',
+  labelUK: 'Не впевнений'
 }];
 const COLORS = [{
   name: 'White',
@@ -460,7 +472,7 @@ export default function CustomOrderPage() {
                             {usage === 'indoor' ? isUK ? 'В приміщенні' : isDE ? 'Innenbereich' : 'Indoor' : isUK ? 'На вулиці' : isDE ? 'Außenbereich' : 'Outdoor'}
                           </div>
                           <div className="text-xs text-muted-foreground">
-                            {usage === 'indoor' ? isUK ? 'Стандартний захист' : isDE ? 'Standard-Schutz' : 'Standard protection' : isUK ? 'Захист від води IP65 (+40%)' : isDE ? 'IP65 wetterfest (+40%)' : 'IP65 weatherproof (+40%)'}
+                            {usage === 'indoor' ? isUK ? 'Стандартний захист' : isDE ? 'Standard-Schutz' : 'Standard protection' : isUK ? 'Захист від води IP65 (+25%)' : isDE ? 'IP65 wetterfest (+25%)' : 'IP65 weatherproof (+25%)'}
                           </div>
                         </label>;
                     })}
@@ -591,22 +603,28 @@ export default function CustomOrderPage() {
                     step: '01',
                     titleEN: 'Submit Your Idea',
                     titleDE: 'Idee einreichen',
+                    titleUK: 'Надішліть ідею',
                     descEN: 'Fill out the form with your project details and upload any reference files.',
                     descDE: 'Füllen Sie das Formular mit Ihren Projektdetails aus und laden Sie Referenzdateien hoch.',
+                    descUK: 'Заповніть форму з деталями проєкту та завантажте файли.',
                     color: 'neon-pink'
                   }, {
                     step: '02',
                     titleEN: 'Free Design Mockup',
                     titleDE: 'Kostenloses Mockup',
+                    titleUK: 'Безкоштовний макет',
                     descEN: 'We create a professional mockup of your sign within 24 hours — completely free.',
                     descDE: 'Wir erstellen innerhalb von 24 Stunden ein professionelles Mockup — komplett kostenlos.',
+                    descUK: 'Ми створюємо професійний макет протягом 24 годин — безкоштовно.',
                     color: 'neon-blue'
                   }, {
                     step: '03',
                     titleEN: 'Approve & Craft',
                     titleDE: 'Bestätigen & Fertigen',
+                    titleUK: 'Затвердіть та виготовлення',
                     descEN: 'Once you approve the design, our artisans handcraft your sign in our Zurich workshop.',
                     descDE: 'Nach Ihrer Freigabe fertigen unsere Handwerker Ihr Schild in unserer Zürcher Werkstatt.',
+                    descUK: 'Після затвердження наші майстри виготовлять вивіску у нашій майстерні в Цюриху.',
                     color: 'neon-green'
                   }].map((item, idx) => <div key={idx} className="flex gap-4">
                       <div className={`
@@ -640,26 +658,34 @@ export default function CustomOrderPage() {
                     icon: Shield,
                     titleEN: '2 Year Warranty',
                     titleDE: '2 Jahre Garantie',
+                    titleUK: '2 роки гарантії',
                     descEN: 'Full warranty on all products.',
-                    descDE: 'Volle Garantie auf alle Produkte.'
+                    descDE: 'Volle Garantie auf alle Produkte.',
+                    descUK: 'Повна гарантія на всю продукцію.'
                   }, {
                     icon: MapPin,
                     titleEN: 'Made in Zurich',
                     titleDE: 'Made in Zürich',
+                    titleUK: 'Зроблено в Цюриху',
                     descEN: 'Handcrafted in our own workshop.',
-                    descDE: 'Handgefertigt in unserer eigenen Werkstatt.'
+                    descDE: 'Handgefertigt in unserer eigenen Werkstatt.',
+                    descUK: 'Ручна робота у нашій майстерні.'
                   }, {
                     icon: Clock,
                     titleEN: '5-7 Days Production',
                     titleDE: '5-7 Tage Produktion',
+                    titleUK: '5-7 днів виробництво',
                     descEN: 'Quick turnaround with free shipping.',
-                    descDE: 'Schnelle Fertigung mit kostenlosem Versand.'
+                    descDE: 'Schnelle Fertigung mit kostenlosem Versand.',
+                    descUK: 'Швидке виготовлення з безкоштовною доставкою.'
                   }, {
                     icon: Sparkles,
                     titleEN: 'Energy Efficient',
                     titleDE: 'Energieeffizient',
+                    titleUK: 'Енергоефективність',
                     descEN: '80% less power than traditional neon.',
-                    descDE: '80% weniger Strom als traditionelles Neon.'
+                    descDE: '80% weniger Strom als traditionelles Neon.',
+                    descUK: 'На 80% менше енергії ніж традиційний неон.'
                   }].map((item, idx) => {
                     const Icon = item.icon;
                     return <div key={idx} className="flex items-start gap-3">

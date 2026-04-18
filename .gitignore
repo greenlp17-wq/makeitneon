@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+.venv_fonts/
+test_fonts.js
+test_fonts.ts
+convert_fonts.py

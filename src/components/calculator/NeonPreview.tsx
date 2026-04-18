@@ -16,6 +16,7 @@ export function NeonPreview({ calcState }: { calcState: UseNeonCalculatorReturn 
     setWidthCm,
     priceBreakdown,
     isRGB,
+    backboardShape,
   } = calcState;
 
   const wallStyle = useMemo(
@@ -90,19 +91,22 @@ export function NeonPreview({ calcState }: { calcState: UseNeonCalculatorReturn 
             className="w-full h-full p-6 lg:p-10 transition-all duration-300"
           >
             <defs>
-              {/* Neon glow filter — only when ON */}
+              {/* Neon glow filter — optimized for filled paths */}
               {isNeonOn && (
-                <filter id="neon-glow-preview" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur1" />
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur2" />
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur3" />
-                  <feMerge>
-                    <feMergeNode in="blur3" />
-                    <feMergeNode in="blur2" />
-                    <feMergeNode in="blur1" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
+                <>
+                  {/* Wide ambient glow */}
+                  <filter id="neon-glow-wide" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="22" />
+                  </filter>
+                  {/* Medium glow halo */}
+                  <filter id="neon-glow-mid" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
+                  </filter>
+                  {/* Tight inner glow for bright core */}
+                  <filter id="neon-glow-core" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+                  </filter>
+                </>
               )}
 
               {/* RGB gradient for RGB mode */}
@@ -120,49 +124,82 @@ export function NeonPreview({ calcState }: { calcState: UseNeonCalculatorReturn 
             </defs>
 
             <g id="preview-group">
-              {/* Acrylic Backing outline */}
-              <rect
-                x={-paddingMm}
-                y={-paddingMm}
-                width={cutWidthMm}
-                height={cutHeightMm}
-                rx={20}
-                fill="rgba(255,255,255,0.02)"
-                stroke="rgba(255,255,255,0.1)"
-                strokeDasharray="12 12"
-                strokeWidth="2"
-                className="transition-all duration-300"
-              />
+              {/* Acrylic Backing outline — shape-dependent */}
+              {backboardShape === 'rectangle' && (
+                <rect
+                  x={-paddingMm}
+                  y={-paddingMm}
+                  width={cutWidthMm}
+                  height={cutHeightMm}
+                  rx={20}
+                  fill="rgba(255,255,255,0.02)"
+                  stroke="rgba(255,255,255,0.1)"
+                  strokeDasharray="12 12"
+                  strokeWidth="2"
+                  className="transition-all duration-300"
+                />
+              )}
+              {backboardShape === 'cut-to-shape' && (
+                <rect
+                  x={-paddingMm * 0.5}
+                  y={-paddingMm * 0.5}
+                  width={widthMm + paddingMm}
+                  height={heightMm + paddingMm}
+                  rx={Math.min(paddingMm, 30)}
+                  fill="rgba(255,255,255,0.02)"
+                  stroke="rgba(255,255,255,0.15)"
+                  strokeDasharray="8 6"
+                  strokeWidth="2"
+                  className="transition-all duration-300"
+                />
+              )}
+              {/* cut-to-letter = no visible backing (invisible mount) */}
 
               {isNeonOn ? (
                 <>
-                  {/* Outer Glow Layer */}
+                  {/* Layer 1: Wide ambient glow (color, very blurred) */}
                   <path
                     d={pathData}
-                    stroke={isRGB ? 'url(#rgb-gradient)' : glowHex}
-                    strokeWidth="14"
-                    fill="none"
-                    opacity="0.7"
+                    fill={isRGB ? 'url(#rgb-gradient)' : glowHex}
+                    stroke="none"
+                    opacity="0.4"
                     className="transition-all duration-500"
-                    filter="url(#neon-glow-preview)"
+                    filter="url(#neon-glow-wide)"
                   />
-                  {/* Bright Core (white tube center) */}
+                  {/* Layer 2: Medium glow halo */}
                   <path
                     d={pathData}
-                    stroke={isRGB ? '#ffffff' : '#ffffff'}
-                    strokeWidth="5"
-                    fill="none"
+                    fill={isRGB ? 'url(#rgb-gradient)' : glowHex}
+                    stroke="none"
+                    opacity="0.6"
+                    className="transition-all duration-400"
+                    filter="url(#neon-glow-mid)"
+                  />
+                  {/* Layer 3: Solid color fill (the "tube") */}
+                  <path
+                    d={pathData}
+                    fill={isRGB ? 'url(#rgb-gradient)' : glowHex}
+                    stroke="none"
                     opacity="0.95"
+                    className="transition-all duration-300"
+                    filter="url(#neon-glow-core)"
+                  />
+                  {/* Layer 4: White-hot center core */}
+                  <path
+                    d={pathData}
+                    fill="#ffffff"
+                    stroke="none"
+                    opacity="0.6"
                     className="transition-all duration-300"
                   />
                 </>
               ) : (
-                /* OFF state — muted tube outline */
+                /* OFF state — muted filled shape */
                 <path
                   d={pathData}
-                  stroke="rgba(255,255,255,0.2)"
-                  strokeWidth="8"
-                  fill="none"
+                  fill="rgba(255,255,255,0.15)"
+                  stroke="rgba(255,255,255,0.08)"
+                  strokeWidth="1"
                   className="transition-all duration-500"
                 />
               )}

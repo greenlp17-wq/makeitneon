@@ -16,6 +16,13 @@ export default function BlogPage() {
   const currentLang = lang || 'en';
   const isDE = i18n.language === 'de';
   const isUK = i18n.language === 'uk';
+  const categoryLabels: Record<string, { de: string; uk: string }> = {
+    'Business': { de: 'Business', uk: 'Бізнес' },
+    'Behind the Scenes': { de: 'Hinter den Kulissen', uk: 'За лаштунками' },
+    'Inspiration': { de: 'Inspiration', uk: 'Натхнення' },
+    'Guide': { de: 'Ratgeber', uk: 'Гід' },
+  };
+  const getCategoryLabel = (cat: string) => isUK ? categoryLabels[cat]?.uk || cat : isDE ? categoryLabels[cat]?.de || cat : cat;
   const featured = blogArticles[0];
   const rest = blogArticles.slice(1);
   return <>
@@ -100,7 +107,7 @@ export default function BlogPage() {
                   <img src={article.image} alt={isUK ? article.title.uk || article.title.en : isDE ? article.title.de : article.title.en} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute top-3 right-3 z-10">
                     <span className="px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white text-xs font-medium border border-white/10">
-                      {article.category}
+                      {getCategoryLabel(article.category)}
                     </span>
                   </div>
                 </div>

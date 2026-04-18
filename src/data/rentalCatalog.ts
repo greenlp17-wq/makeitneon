@@ -245,6 +245,12 @@ export const rentalPackages: RentalPackage[] = [
       'Selbstabholung in Zürich oder Postversand (+CHF 30)',
       'Dimmer & Fernbedienung inklusive',
     ],
+    features_uk: [
+      'Оренда на вихідні (пт–пн)',
+      'Підставка в комплекті',
+      'Самовивіз у Цюриху або пошта (+CHF 30)',
+      'Димер та пульт в комплекті',
+    ],
   },
   {
     id: 'standard',
@@ -254,6 +260,7 @@ export const rentalPackages: RentalPackage[] = [
     deposit: 150,
     badge: 'Most Popular',
     badge_de: 'Am beliebtesten',
+    badge_uk: 'Найпопулярніший',
     features: [
       'Weekend rental (Fri–Mon)',
       'Delivery & pickup within Zurich (30km)',
@@ -268,6 +275,13 @@ export const rentalPackages: RentalPackage[] = [
       'Dimmer & Fernbedienung inklusive',
       'Aufbauanleitung & Support',
     ],
+    features_uk: [
+      'Оренда на вихідні (пт–пн)',
+      'Доставка та підбір у Цюриху (30км)',
+      'Підставка в комплекті',
+      'Димер та пульт в комплекті',
+      'Інструкція з монтажу та підтримка',
+    ],
   },
   {
     id: 'premium',
@@ -277,6 +291,7 @@ export const rentalPackages: RentalPackage[] = [
     deposit: 200,
     badge: 'All Inclusive',
     badge_de: 'All Inclusive',
+    badge_uk: 'Все включено',
     features: [
       'Weekend rental (Fri–Mon)',
       'Delivery, professional setup & teardown',
@@ -292,6 +307,14 @@ export const rentalPackages: RentalPackage[] = [
       'Foto-Beratung (beste Platzierung)',
       'Dimmer & Fernbedienung inklusive',
       'Prioritäts-Support',
+    ],
+    features_uk: [
+      'Оренда на вихідні (пт–пн)',
+      'Доставка, професійний монтаж та демонтаж',
+      'Підставка + кріплення для підвісу',
+      'Консультація з розміщення',
+      'Димер та пульт в комплекті',
+      'Пріоритетна підтримка',
     ],
   },
 ];

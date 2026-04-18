@@ -177,10 +177,10 @@ export default function ProductPage() {
               {/* Badges */}
               <div className="absolute top-4 left-4 flex gap-2 z-20">
                 {product.bestSeller && <Badge className="bg-neon-warm text-black text-[10px] font-bold uppercase tracking-wider border-none">
-                    Best Seller
+                    {isUK ? 'Хіт' : 'Best Seller'}
                   </Badge>}
                 {product.isNew && <Badge className="bg-neon-green text-black text-[10px] font-bold uppercase tracking-wider border-none">
-                    New
+                    {isUK ? 'Новинка' : 'New'}
                   </Badge>}
               </div>
 
@@ -295,7 +295,7 @@ export default function ProductPage() {
                   <div>
                     <div className="text-sm font-semibold">{isUK ? 'На вулиці' : isDE ? 'Außenbereich' : 'Outdoor'}</div>
                     <div className={`text-xs ${isOutdoor ? 'text-background/70' : 'text-muted-foreground'}`}>
-                      +40% (IP65)
+                      +25% (IP65)
                     </div>
                   </div>
                 </button>

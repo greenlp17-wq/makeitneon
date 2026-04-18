@@ -25,7 +25,7 @@ export const neonFonts: NeonFont[] = [
     id: 'jura-regular',
     name: 'Jura Regular',
     category: 'Neon',
-    url: `/fonts/Jura-Regular.woff2`,
+    url: `/fonts/Jura-Regular.ttf`,
     googleName: 'Jura-Regular'
   },
   {
@@ -74,14 +74,14 @@ export const neonFonts: NeonFont[] = [
     id: 'sanbernardinoregular',
     name: 'SanBernardinoRegular',
     category: 'Neon',
-    url: `/fonts/SanBernardinoRegular.woff2`,
+    url: `/fonts/SanBernardinoRegular.ttf`,
     googleName: 'SanBernardinoRegular'
   },
   {
     id: 'amaticsc-regular',
     name: 'AmaticSC Regular',
     category: 'Neon',
-    url: `/fonts/AmaticSC-Regular.woff2`,
+    url: `/fonts/AmaticSC-Regular.ttf`,
     googleName: 'AmaticSC-Regular'
   },
   {
@@ -102,7 +102,7 @@ export const neonFonts: NeonFont[] = [
     id: 'vampiroone-regular',
     name: 'VampiroOne Regular',
     category: 'Neon',
-    url: `/fonts/VampiroOne-Regular.woff2`,
+    url: `/fonts/VampiroOne-Regular.ttf`,
     googleName: 'VampiroOne-Regular'
   },
   {
@@ -123,7 +123,7 @@ export const neonFonts: NeonFont[] = [
     id: 'prologuescriptlite-regular',
     name: 'PrologueScriptLite Regular',
     category: 'Neon',
-    url: `/fonts/PrologueScriptLite-Regular.woff2`,
+    url: `/fonts/PrologueScriptLite-Regular.ttf`,
     googleName: 'PrologueScriptLite-Regular'
   },
   {
@@ -137,7 +137,7 @@ export const neonFonts: NeonFont[] = [
     id: 'murreyc',
     name: 'MurreyC',
     category: 'Neon',
-    url: `/fonts/MurreyC.woff2`,
+    url: `/fonts/MurreyC.ttf`,
     googleName: 'MurreyC'
   },
   {
@@ -172,7 +172,7 @@ export const neonFonts: NeonFont[] = [
     id: 'library3amsoft',
     name: 'LIBRARY3AMsoft',
     category: 'Neon',
-    url: `/fonts/LIBRARY3AMsoft.woff2`,
+    url: `/fonts/LIBRARY3AMsoft.ttf`,
     googleName: 'LIBRARY3AMsoft'
   },
   {
@@ -193,14 +193,14 @@ export const neonFonts: NeonFont[] = [
     id: 'prociono-regular',
     name: 'Prociono Regular',
     category: 'Neon',
-    url: `/fonts/Prociono-Regular.woff2`,
+    url: `/fonts/Prociono-Regular.ttf`,
     googleName: 'Prociono-Regular'
   },
   {
     id: 'neononeregular',
     name: 'NeonOneRegular',
     category: 'Neon',
-    url: `/fonts/NeonOneRegular.woff2`,
+    url: `/fonts/NeonOneRegular.ttf`,
     googleName: 'NeonOneRegular'
   },
   {
@@ -214,7 +214,7 @@ export const neonFonts: NeonFont[] = [
     id: 'rosamarena',
     name: 'RosaMarena',
     category: 'Neon',
-    url: `/fonts/RosaMarena.woff2`,
+    url: `/fonts/RosaMarena.ttf`,
     googleName: 'RosaMarena'
   },
   {
@@ -235,7 +235,7 @@ export const neonFonts: NeonFont[] = [
     id: 'linoleoscript',
     name: 'LinoleoScript',
     category: 'Neon',
-    url: `/fonts/LinoleoScript.woff2`,
+    url: `/fonts/LinoleoScript.ttf`,
     googleName: 'LinoleoScript'
   },
   {
@@ -298,7 +298,7 @@ export const neonFonts: NeonFont[] = [
     id: 'redvevet',
     name: 'RedVevet',
     category: 'Neon',
-    url: `/fonts/RedVevet.woff2`,
+    url: `/fonts/RedVevet.ttf`,
     googleName: 'RedVevet'
   },
   {
@@ -308,32 +308,26 @@ export const neonFonts: NeonFont[] = [
     url: `/fonts/Roboto-Bold.75371f5.ttf`,
     googleName: 'Roboto-Bold'
   },
-  {
-    id: 'fontawesome-webfont',
-    name: 'fontawesome webfont',
-    category: 'Neon',
-    url: `/fonts/fontawesome-webfont.woff2`,
-    googleName: 'fontawesome-webfont'
-  },
+
   {
     id: 'chilanka',
     name: 'Chilanka',
     category: 'Neon',
-    url: `/fonts/Chilanka.6584c69.woff2`,
+    url: `/fonts/Chilanka.6584c69.ttf`,
     googleName: 'Chilanka'
   },
   {
     id: 'marske',
     name: 'Marske',
     category: 'Neon',
-    url: `/fonts/Marske.woff2`,
+    url: `/fonts/Marske.ttf`,
     googleName: 'Marske'
   },
   {
     id: 'festus',
     name: 'Festus',
     category: 'Neon',
-    url: `/fonts/Festus.woff2`,
+    url: `/fonts/Festus.ttf`,
     googleName: 'Festus'
   },
   {
@@ -347,7 +341,7 @@ export const neonFonts: NeonFont[] = [
     id: 'caveat-regular',
     name: 'Caveat Regular',
     category: 'Neon',
-    url: `/fonts/Caveat-Regular.woff2`,
+    url: `/fonts/Caveat-Regular.ttf`,
     googleName: 'Caveat-Regular'
   },
   {
@@ -361,7 +355,7 @@ export const neonFonts: NeonFont[] = [
     id: 'handboys',
     name: 'HandBoys',
     category: 'Neon',
-    url: `/fonts/HandBoys.woff2`,
+    url: `/fonts/HandBoys.ttf`,
     googleName: 'HandBoys'
   },
   {
@@ -375,14 +369,14 @@ export const neonFonts: NeonFont[] = [
     id: 'pacifico-latin-r',
     name: 'pacifico latin r',
     category: 'Neon',
-    url: `/fonts/pacifico-latin-r.woff2`,
+    url: `/fonts/pacifico-latin-r.ttf`,
     googleName: 'pacifico-latin-r'
   },
   {
     id: 'wiesbadenswingltcyr-roman',
     name: 'WiesbadenSwingLTCYR Roman',
     category: 'Neon',
-    url: `/fonts/WiesbadenSwingLTCYR-Roman.woff2`,
+    url: `/fonts/WiesbadenSwingLTCYR-Roman.ttf`,
     googleName: 'WiesbadenSwingLTCYR-Roman'
   },
   {
@@ -494,7 +488,7 @@ export const neonFonts: NeonFont[] = [
     id: 'rosalindaregular',
     name: 'RosalindaRegular',
     category: 'Neon',
-    url: `/fonts/RosalindaRegular.woff2`,
+    url: `/fonts/RosalindaRegular.ttf`,
     googleName: 'RosalindaRegular'
   },
   {
@@ -515,7 +509,7 @@ export const neonFonts: NeonFont[] = [
     id: 'badscript-regular',
     name: 'BadScript Regular',
     category: 'Neon',
-    url: `/fonts/BadScript-Regular.woff2`,
+    url: `/fonts/BadScript-Regular.ttf`,
     googleName: 'BadScript-Regular'
   },
   {
@@ -536,7 +530,7 @@ export const neonFonts: NeonFont[] = [
     id: 'clip',
     name: 'Clip',
     category: 'Neon',
-    url: `/fonts/Clip.woff2`,
+    url: `/fonts/Clip.ttf`,
     googleName: 'Clip'
   },
   {
@@ -557,7 +551,7 @@ export const neonFonts: NeonFont[] = [
     id: 'comfortaa-regular',
     name: 'Comfortaa Regular',
     category: 'Neon',
-    url: `/fonts/Comfortaa-Regular.woff2`,
+    url: `/fonts/Comfortaa-Regular.ttf`,
     googleName: 'Comfortaa-Regular'
   },
   {
@@ -620,7 +614,7 @@ export const neonFonts: NeonFont[] = [
     id: 'didactgothic-regular',
     name: 'DidactGothic Regular',
     category: 'Neon',
-    url: `/fonts/DidactGothic-Regular.woff2`,
+    url: `/fonts/DidactGothic-Regular.ttf`,
     googleName: 'DidactGothic-Regular'
   },
   {
